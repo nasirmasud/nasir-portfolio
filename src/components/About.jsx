@@ -55,7 +55,7 @@ const About = () => {
                       type: "spring",
                       stiffness: 400,
                       damping: 10,
-                      delay: 0.3,
+                      delay: 1,
                     }}
                   />
                   <br />

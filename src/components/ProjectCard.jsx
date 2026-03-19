@@ -8,7 +8,7 @@ const ProjectCard = ({
   tags,
   demoLink,
   repoLink,
-  index = 0, // গ্রিডে সিরিয়ালি আসার জন্য index ব্যবহার করা যেতে পারে
+  index = 0,
 }) => {
   return (
     <motion.div
@@ -17,7 +17,7 @@ const ProjectCard = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{ y: -10 }} // হোভার করলে কার্ডটি উপরে উঠবে
+      whileHover={{ y: -10 }} //
       className='group rounded-xl overflow-hidden glass-panel border border-border hover:shadow-2xl hover:border-primary/30 transition-all duration-300 flex flex-col h-full bg-card/50'
     >
       {/* Image Container */}
@@ -26,7 +26,7 @@ const ProjectCard = ({
           src={image}
           alt={title}
           className='w-full h-full object-cover transition-transform duration-500'
-          whileHover={{ scale: 1.1 }} // ইমেজে জুম ইফেক্ট
+          whileHover={{ scale: 1.1 }}
         />
 
         {/* Overlay with Buttons */}

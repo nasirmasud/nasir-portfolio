@@ -12,7 +12,7 @@ const NavContact = () => {
   };
 
   const handleDownloadCV = () => {
-    const cvUrl = "/cv.pdf";
+    const cvUrl = "/nasir-cv.pdf";
     window.open(cvUrl, "_blank");
   };
 
