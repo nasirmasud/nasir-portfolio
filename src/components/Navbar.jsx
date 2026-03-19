@@ -76,19 +76,30 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className='absolute top-full left-0 w-full bg-black/95 border-b border-white/10 p-6 md:hidden'
+            className='absolute top-full right-0 w-1/3 bg-black/95 border-b border-white/10 p-6 md:hidden'
           >
             <div className='flex flex-col gap-4'>
               {navItems.map((item) => (
-                <a
+                <motion.a
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className='text-xl text-gray-300'
+                  whileHover={{ x: 10, color: "#a855f7" }}
+                  whileTap={{ scale: 0.95 }}
+                  className='text-xl text-gray-300 font-medium transition-colors'
                 >
                   {item.name}
-                </a>
+                </motion.a>
               ))}
+
+              <motion.a
+                href='#contact'
+                onClick={() => setIsOpen(false)}
+                whileTap={{ scale: 0.95 }}
+                className='text-center bg-purple-600 text-white py-3 rounded-xl font-bold'
+              >
+                Let's Talk
+              </motion.a>
             </div>
           </motion.div>
         )}

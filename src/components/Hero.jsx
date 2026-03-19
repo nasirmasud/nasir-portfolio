@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
+import { ArrowRight, Github, Linkedin } from "lucide-react";
 import HeroImage from "./HeroImage";
 
 const Hero = () => {
@@ -13,7 +13,7 @@ const Hero = () => {
   return (
     <div
       data-cmp='Hero'
-      className='relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 md:pt-24 lg:pt-40 2xl:pt-0'
+      className='relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 md:pt-24 lg:pt-40 2xl:pt-24'
     >
       {/* Background decoration with Floating Animation */}
       <div className='absolute top-0 left-0 w-full h-full overflow-hidden -z-10'>
@@ -133,19 +133,14 @@ const Hero = () => {
             className='mt-12 flex items-center justify-center gap-6'
           >
             <SocialLink
-              href='https://github.com'
+              href='https://github.com/nasirmasud/'
               icon={<Github className='w-5 h-5' />}
               label='GitHub'
             />
             <SocialLink
-              href='https://linkedin.com'
+              href='https://www.linkedin.com/in/mohammadnasirmasud/'
               icon={<Linkedin className='w-5 h-5' />}
               label='LinkedIn'
-            />
-            <SocialLink
-              href='https://twitter.com'
-              icon={<Twitter className='w-5 h-5' />}
-              label='Twitter'
             />
           </motion.div>
         </motion.div>
