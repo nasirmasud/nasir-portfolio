@@ -18,7 +18,6 @@ const Navbar = () => {
       data-cmp='Navbar'
       className='fixed w-full z-50 border-b border-white/5 bg-background/80 backdrop-blur-md'
     >
-      {/* max-w-[1440px] সরিয়ে w-full এবং px-8 ব্যবহার করেছি যাতে পুরো স্ক্রিন জুড়ে থাকে */}
       <div className='w-full px-4 sm:px-8 lg:px-12'>
         <div className='flex items-center justify-between h-20'>
           {/* Left Section - NavContact */}
@@ -40,7 +39,6 @@ const Navbar = () => {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  whileHover={{ y: -2 }}
                   className='text-gray-400 hover:text-white transition-colors text-sm font-medium relative group'
                 >
                   {item.name}

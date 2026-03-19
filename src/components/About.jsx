@@ -36,15 +36,32 @@ const About = () => {
 
               <div className='space-y-4 text-muted-foreground'>
                 <p>
-                  My journey into development didn't start in a computer science
+                  My journey into development didn't start in a traditional
                   classroom. It started with curiosity and a desire to build
                   things that exist on the web.
                 </p>
                 <p>
-                  I've spent countless late nights debugging, reading
-                  documentation, and building projects from scratch. This path
-                  has taught me not just how to code, but how to learn
-                  efficiently and adapt quickly to new technologies.
+                  After countless hours of debugging, studying documentation,
+                  and building projects from scratch, But finally I joined a
+                  BootCamp on
+                  <motion.img
+                    src='/PH.png'
+                    alt='Programming Hero'
+                    className='inline-block h-8 ml-2 mr-1 -my-1'
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 10,
+                      delay: 0.3,
+                    }}
+                  />
+                  <br />
+                  This journey has not only taught me how to code but has also
+                  refined my ability to learn efficiently and adapt quickly to
+                  new technologies.
                 </p>
                 <p>
                   Today, I build accessible, pixel-perfect user interfaces with
@@ -71,7 +88,7 @@ const About = () => {
                   className='p-4 bg-secondary/50 rounded-lg border border-border'
                 >
                   <h4 className='font-bold text-foreground text-2xl mb-1'>
-                    15+
+                    10+
                   </h4>
                   <p className='text-sm text-muted-foreground'>
                     Projects Built
@@ -98,8 +115,7 @@ const About = () => {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              Driven by curiosity, <br />
-              fuelled by coffee.
+              Driven by curiosity...
             </motion.h2>
 
             <motion.p

@@ -54,13 +54,12 @@ const TechStack = () => {
     },
   ];
 
-  // কন্টেইনার ভেরিয়েন্ট
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1, // কার্ডগুলো একে একে আসবে
+        staggerChildren: 0.06,
       },
     },
   };
@@ -85,12 +84,10 @@ const TechStack = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 1 }}
         >
-          <span className='text-primary font-semibold tracking-wider uppercase text-sm'>
-            Tech Stack
-          </span>
-          <h2 className='text-3xl sm:text-4xl font-bold mt-2'>
+          <span className='text-primary text-3xl font-bold'>Tech Stack</span>
+          <h2 className='text-muted-foreground mt-4'>
             Technologies I work with
           </h2>
         </motion.div>
@@ -109,14 +106,14 @@ const TechStack = () => {
               variants={itemVariants}
               whileHover={{
                 y: -8,
-                transition: { duration: 0.2 },
+                transition: { duration: 0.5 },
               }}
               className='group p-6 glass-panel rounded-xl border border-white/5 hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-4 bg-card/30'
             >
               <motion.div
                 className={`p-4 rounded-full bg-secondary/50 transition-colors duration-300 ${tech.color}`}
                 whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 1 }}
               >
                 {tech.icon}
               </motion.div>

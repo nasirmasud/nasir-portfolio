@@ -17,15 +17,15 @@ const NavContact = () => {
   };
 
   return (
-    <div className='ml-8 flex items-center gap-3'>
+    <div className='flex items-center gap-3'>
       {/* Email Section - Container Static */}
-      <div className='flex items-center gap-2 border border-gray-600/30 rounded-full px-4 py-2 bg-card/20 backdrop-blur-sm'>
+      <div className='flex items-center gap-2 border border-gray-600/30 rounded-full px-3 py-2 bg-card/20 backdrop-blur-sm'>
         {/* Copy Button */}
         <motion.button
           whileHover={{ scale: 1.2, color: "#a855f7" }}
           whileTap={{ scale: 0.9 }}
           onClick={handleCopy}
-          className='p-1 rounded-full transition-colors outline-none text-purple-500 dark:text-purple-400' // এখানে কালার ক্লাস যোগ করা হয়েছে
+          className='p-1 rounded-full transition-colors outline-none text-purple-500 dark:text-purple-400'
           aria-label='Copy email'
         >
           <AnimatePresence mode='wait'>
@@ -39,7 +39,6 @@ const NavContact = () => {
                 <CheckCircle2 className='h-4 w-4 text-green-500' />
               </motion.div>
             ) : (
-              // সরাসরি আইকনেও ক্লাস দিতে পারেন অথবা উপরের বাটনে
               <Copy className='h-4 w-4' />
             )}
           </AnimatePresence>
@@ -66,10 +65,11 @@ const NavContact = () => {
 
         {/* Download Icon - Hover Active */}
         <motion.button
-          whileHover={{ scale: 1.2, y: 2 }}
+          whileHover={{ scale: 1.2, y: -3 }}
           whileTap={{ scale: 0.9 }}
+          href='mailto:nasir.masud@ymail.com'
+          className='text-purple-500 flex items-center justify-center p-1 -mt-1 rounded-full transition-colors'
           onClick={handleDownloadCV}
-          className='p-1 rounded-full transition-colors outline-none'
         >
           <motion.div
             animate={{ y: [0, 1.5, 0] }}

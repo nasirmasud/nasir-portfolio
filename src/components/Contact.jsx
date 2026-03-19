@@ -44,7 +44,7 @@ const Contact = () => {
                 isInView={isInView}
                 icon={<Mail className='w-5 h-5 text-primary' />}
                 label='Email me at'
-                value='hello@example.com'
+                value='nasir.masud@ymail.com'
                 isLink={true}
               />
               <ContactInfo

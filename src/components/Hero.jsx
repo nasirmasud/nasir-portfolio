@@ -7,33 +7,45 @@ const Hero = () => {
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 1, ease: "easeOut" },
   };
 
   return (
     <div
       data-cmp='Hero'
-      className='relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16'
+      className='relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 md:pt-24 lg:pt-40 2xl:pt-0'
     >
       {/* Background decoration with Floating Animation */}
       <div className='absolute top-0 left-0 w-full h-full overflow-hidden -z-10'>
         <motion.div
+          initial={{ scale: 1, x: 0, y: 0 }}
           animate={{
             scale: [1, 1.1, 1],
             x: [0, 20, 0],
             y: [0, -20, 0],
           }}
-          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-          className='absolute top-20 right-10 w-96 h-96 bg-primary/20 rounded-full blur-[128px]'
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "linear",
+            delay: 1,
+          }}
+          className='absolute top-20 right-10 w-96 h-96 bg-primary/20 rounded-full blur-[128px] will-change-transform'
         />
         <motion.div
+          initial={{ scale: 1, x: 0, y: 0 }}
           animate={{
             scale: [1, 1.2, 1],
             x: [0, -30, 0],
             y: [0, 30, 0],
           }}
-          transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-          className='absolute bottom-10 left-10 w-80 h-80 bg-accent/10 rounded-full blur-[128px]'
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "linear",
+            delay: 1,
+          }}
+          className='absolute bottom-10 left-10 w-80 h-80 bg-accent/10 rounded-full blur-[128px] will-change-transform'
         />
       </div>
 
@@ -42,7 +54,7 @@ const Hero = () => {
           initial='initial'
           animate='animate'
           variants={{
-            animate: { transition: { staggerChildren: 0.1 } }, // একের পর এক এলিমেন্ট আসবে
+            animate: { transition: { staggerChildren: 0.05 } },
           }}
         >
           {/* Hero Image with Scale effect */}

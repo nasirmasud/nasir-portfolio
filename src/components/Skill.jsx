@@ -14,7 +14,7 @@ const Skill = () => {
     <section id='stack' className='py-24 bg-background'>
       <div className='max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='text-center mb-16'>
-          <h2 className='text-3xl font-bold'>Technical Skills</h2>
+          <h2 className='text-3xl font-bold text-primary'>Technical Skills</h2>
           <p className='text-muted-foreground mt-4'>
             Technologies I use to bring ideas to life
           </p>
@@ -26,7 +26,7 @@ const Skill = () => {
               key={skill.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.05 }}
               viewport={{ once: true }}
               className='p-6 rounded-xl border border-border bg-card/50 hover:border-primary/50 transition-colors'
             >

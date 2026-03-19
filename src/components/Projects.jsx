@@ -41,7 +41,7 @@ const Projects = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, // প্রতিটি কার্ড ০.২ সেকেন্ড পর পর আসবে
+        staggerChildren: 0.12,
       },
     },
   };

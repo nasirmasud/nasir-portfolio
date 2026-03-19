@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function HeroImage() {
   return (
-    <div className='flex items-center justify-center ml-24 pb-12 mx-auto relative'>
+    <div className='flex items-center justify-center pb-12 mx-auto relative'>
       {/* Profile Picture */}
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
