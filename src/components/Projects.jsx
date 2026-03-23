@@ -98,13 +98,6 @@ const Projects = () => {
               Featured Projects
             </h2>
           </div>
-          <motion.a
-            whileHover={{ x: 5 }}
-            href='#'
-            className='text-muted-foreground hover:text-primary transition-colors flex items-center gap-1'
-          >
-            View all projects &rarr;
-          </motion.a>
         </motion.div>
 
         {/* Project Cards Grid with Stagger Effect */}
