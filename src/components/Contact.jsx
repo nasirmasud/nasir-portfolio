@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { Mail, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { useRef } from "react";
 
 const Contact = () => {
@@ -53,6 +53,24 @@ const Contact = () => {
                 icon={<MapPin className='w-5 h-5 text-primary' />}
                 label='Location'
                 value='Remote / Worldwide'
+              />
+              <ContactInfo
+                delay={0.6}
+                isInView={isInView}
+                icon={<Phone className='w-5 h-5 text-primary' />}
+                label='Call me at'
+                value='+8801911907105'
+                isLink={true}
+                linkType="tel"
+              />
+              <ContactInfo
+                delay={0.7}
+                isInView={isInView}
+                icon={<MessageCircle className='w-5 h-5 text-green-500' />}
+                label='WhatsApp'
+                value='+8801911907105'
+                isLink={true}
+                linkType="whatsapp"
               />
             </div>
           </motion.div>
@@ -123,31 +141,40 @@ const Contact = () => {
 };
 
 // Helper component for Contact Details
-const ContactInfo = ({ icon, label, value, isLink, delay, isInView }) => (
-  <motion.div
-    className='flex items-center gap-4'
-    initial={{ opacity: 0, x: -20 }}
-    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
-    transition={{ delay, duration: 0.5 }}
-  >
-    <div className='w-12 h-12 rounded-full bg-secondary/50 flex items-center justify-center border border-border'>
-      {icon}
-    </div>
-    <div>
-      <p className='text-sm text-muted-foreground'>{label}</p>
-      {isLink ? (
-        <a
-          href={`mailto:${value}`}
-          className='text-lg font-semibold hover:text-primary transition-colors'
-        >
-          {value}
-        </a>
-      ) : (
-        <p className='text-lg font-semibold'>{value}</p>
-      )}
-    </div>
-  </motion.div>
-);
+const ContactInfo = ({ icon, label, value, isLink, delay, isInView, linkType }) => {
+  let href = "";
+  if (linkType === "tel") href = `tel:${value}`;
+  else if (linkType === "whatsapp") href = `https://wa.me/${value.replace(/[^0-9]/g, '')}`;
+  else href = `mailto:${value}`;
+
+  return (
+    <motion.div
+      className='flex items-center gap-4'
+      initial={{ opacity: 0, x: -20 }}
+      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+      transition={{ delay, duration: 0.5 }}
+    >
+      <div className='w-12 h-12 rounded-full bg-secondary/50 flex items-center justify-center border border-border'>
+        {icon}
+      </div>
+      <div>
+        <p className='text-sm text-muted-foreground'>{label}</p>
+        {isLink ? (
+          <a
+            href={href}
+            target={linkType === "whatsapp" ? "_blank" : "_self"}
+            rel={linkType === "whatsapp" ? "noopener noreferrer" : ""}
+            className='text-lg font-semibold hover:text-primary transition-colors'
+          >
+            {value}
+          </a>
+        ) : (
+          <p className='text-lg font-semibold'>{value}</p>
+        )}
+      </div>
+    </motion.div>
+  );
+};
 
 // Helper component for Form Inputs
 const FormInput = ({ label, id, placeholder, type = "text" }) => (
