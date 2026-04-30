@@ -1,5 +1,4 @@
 import About from "@/components/About";
-import AboutAndExperience from "@/components/AboutAndExperience";
 import Contact from "@/components/Contact";
 import Education from "@/components/Education";
 import Footer from "@/components/Footer";
@@ -18,7 +17,6 @@ const Index = () => {
         <TechStack />
         <Skill />
         <About />
-        <AboutAndExperience />
         <Projects />
         <Education />
         <Contact />
