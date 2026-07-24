@@ -247,7 +247,7 @@ function ProjectDetailsModal({ project, index, total, onClose, onNext, onPrev })
             </div>
           </div>
 
-          {/* Right: overview, stack, features */}
+          {/* Right: overview, stack */}
           <div className="min-w-0">
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
               {project.description}
@@ -285,16 +285,19 @@ function ProjectDetailsModal({ project, index, total, onClose, onNext, onPrev })
                 );
               })}
             </div>
+          </div>
+        </div>
 
-            <h4 className="text-white font-semibold text-sm mb-3">Key Features</h4>
-            <div className="grid grid-cols-2 gap-y-2 gap-x-3 mb-2">
-              {d.features.map((feature) => (
-                <div key={feature} className="flex items-center gap-2 text-xs text-slate-300">
-                  <CheckCircle2 size={14} className="text-violet-400 shrink-0" />
-                  <span>{feature}</span>
-                </div>
-              ))}
-            </div>
+        {/* Key Features - full width */}
+        <div className="px-6 mt-5">
+          <h4 className="text-white font-semibold text-sm mb-3">Key Features</h4>
+          <div className="grid grid-cols-3 gap-y-1.5 gap-x-3 max-h-36 overflow-y-auto pr-1">
+            {d.features.map((feature) => (
+              <div key={feature} className="flex items-center gap-2 text-xs text-slate-300">
+                <CheckCircle2 size={14} className="text-violet-400 shrink-0" />
+                <span>{feature}</span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -425,7 +428,7 @@ export default function AllProjects() {
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-6 max-w-7xl mx-auto">
             {filtered.map((project) => {
               const realIndex = projects.indexOf(project);
               return (

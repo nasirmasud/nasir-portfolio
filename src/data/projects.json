@@ -1,152 +1,494 @@
 [
   {
-    "title": "GameHub | Modern Video Game Discovery App",
-    "description": "This high-performance Single Page Application allows users to explore a massive database of over 500,000 games. The application prioritizes a seamless user experience through real-time search capabilities and dynamic filtering by genre or platform. Built with a modular, service-based architecture, it utilizes custom hooks for efficient data management and clean fetching logic. To ensure a polished look across all devices, the interface features a fully responsive grid layout, optimized image delivery, integrated critic scores, and a toggleable dark/light mode.",
-    "image": "/game-hub.png",
-    "tags": ["React", "TypeScript", "Tailwind", "Vite", "Chakra UI"],
-    "demoLink": "https://rawg-game-hub-api.netlify.app/",
-    "repoLink": "https://github.com/nasirmasud/gameHub/",
-    "category": "Frontend",
+    "title": "MindAgent | AI-Powered Multi-Agent Productivity Platform",
+    "description": "A full-stack agentic AI platform where users interact with specialized AI Agents to generate content, analyze data, understand images, and chat with an intelligent assistant. Built with Next.js 15 and Express.js, it features streaming SSE responses, real-time conversation memory, multi-file analysis with interactive charts, and a polished responsive UI. The architecture uses a provider-agnostic AI abstraction layer, JWT authentication with Google OAuth, and a MongoDB-backed data persistence system.",
+    "image": "/site-ss/mindagent01.png",
+    "tags": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "shadcn/ui",
+      "Express",
+      "MongoDB",
+      "TanStack Query"
+    ],
+    "demoLink": "https://mindagent-client.vercel.app/",
+    "repoLink": "https://github.com/nasirmasud/mindagent-client/",
+    "category": "Full-Stack",
     "details": {
-      "publishedDate": "Mar 2024",
-      "screenshots": ["/game-hub.png", "/game-hub.png", "/game-hub.png"],
+      "publishedDate": "Jul 2026",
+      "screenshots": [
+        "/site-ss/mindagent01.png",
+        "/site-ss/mindagent02.png",
+        "/site-ss/mindagent03.png",
+        "/site-ss/mindagent04.png"
+      ],
       "features": [
-        "Real-time Search",
-        "Genre & Platform Filters",
+        "Streaming AI Chat with Memory",
+        "AI Content Generator (Blog, Social, Docs)",
+        "AI Image Analyzer with Vision API",
+        "CSV/XLSX/JSON Data Analysis & Reports",
+        "Interactive Charts & XLSX Export",
+        "Google OAuth + Email Auth",
         "Dark / Light Mode",
-        "Responsive Grid Layout",
-        "Custom Data Hooks",
-        "Critic Score Integration"
-      ],
-      "projectInfo": {
-        "duration": "1.5 Months",
-        "teamSize": "1 Developer",
-        "role": "Frontend Developer",
-        "client": "Personal Project"
-      },
-      "challenges": [
-        "Querying and paginating a 500,000+ game database without janky UI.",
-        "Keeping filter state, search, and routing in sync.",
-        "Delivering optimized images across wildly different aspect ratios."
-      ],
-      "solutions": [
-        "Built custom hooks to debounce search and cache API responses.",
-        "Centralized filter state and synced it to the URL for shareable views.",
-        "Used responsive image loading with lazy-loaded grid items."
-      ],
-      "caseStudyLink": null
-    }
-  },
-  {
-    "title": "Next Properties | A Modern Real Estate Platform",
-    "description": "Next Properties is a full-stack property rental and sales platform built with Next.js. It allows users to browse, search, and manage properties, save their favorites, and communicate with property owners through an integrated messaging system. The app features user authentication, detailed property profiles with image galleries, location-based maps, and a user-friendly interface for both buyers/renters and property managers.",
-    "image": "/next-properties.png",
-    "tags": ["Next.js", "MongoDB", "NextAuth.js", "Tailwind", "Cloudinary"],
-    "demoLink": "https://next-properties-seven.vercel.app/",
-    "repoLink": "https://github.com/nasirmasud/next-properties/",
-    "category": "Full Stack",
-    "details": {
-      "publishedDate": "May 2024",
-      "screenshots": ["/next-properties.png", "/next-properties.png", "/next-properties.png"],
-      "features": [
-        "Authentication (NextAuth)",
-        "Saved Favorites",
-        "Owner Messaging",
-        "Image Galleries (Cloudinary)",
-        "Location-based Maps",
-        "Responsive Design"
+        "Responsive Multi-Page UI",
+        "Rate Limiting & Security Headers",
+        "Multi-Provider AI Architecture"
       ],
       "projectInfo": {
         "duration": "2 Months",
         "teamSize": "1 Developer",
-        "role": "Full Stack Developer",
+        "role": "Full-Stack Developer",
         "client": "Personal Project"
       },
       "challenges": [
-        "Handling real-time messaging between renters and owners.",
-        "Structuring flexible property data in MongoDB.",
-        "Serving optimized image galleries at scale."
+        "Implementing real-time streaming responses with SSE while maintaining conversation context across sessions.",
+        "Building a provider-agnostic AI abstraction layer that supports multiple LLM backends without rewriting core logic.",
+        "Handling multi-file uploads (CSV, XLSX, JSON), parsing them server-side, and generating structured AI insights with chart data."
       ],
       "solutions": [
-        "Built a lightweight messaging system on top of Next.js API routes.",
-        "Designed a flexible MongoDB schema with indexed search fields.",
-        "Used Cloudinary transformations for on-the-fly image optimization."
+        "Used Server-Sent Events with TanStack React Query for streaming, and stored full conversation history in MongoDB for persistent context.",
+        "Designed an AIProvider interface with a factory pattern, starting with OpenRouter and leaving clean extension points for Gemini, Claude, and others.",
+        "Built a Multer + PapaParse/SheetJS pipeline on the backend with Zod validation, sending parsed previews to GPT-4o for structured JSON analysis output."
       ],
       "caseStudyLink": null
     }
   },
   {
-    "title": "Next Weather | A Weather Application",
-    "description": "A weather application that allows users to search for locations, view current weather conditions with detailed information, and explore forecasts. The app displays temperature, wind speed, and other meteorological data with a clean, responsive interface.",
-    "image": "/next-weather.png",
-    "tags": ["Next.js", "TypeScript", "Tailwind", "Radix UI", "Zod", "NextAuth.js", "Prisma ORM", "PostgreSQL"],
-    "demoLink": "https://next-weather-gold.vercel.app/",
-    "repoLink": "https://github.com/nasirmasud/next-weather/",
-    "category": "Full Stack",
+    "title": "GameDB \u2013 Game Discovery & Review Platform",
+    "description": "A full-stack game discovery platform that connects gamers with their next favorite titles. Integrates the RAWG Video Games Database API to provide a rich catalog of games with details, screenshots, trailers, and ratings. Users can browse, search, review, and wishlist games, while writers can submit custom game entries. Administrators have full moderation and analytics capabilities.",
+    "image": "/site-ss/gamedb01.png",
+    "tags": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "MongoDB",
+      "NextAuth",
+      "Chart.js",
+      "Swiper",
+      "Rawg API"
+    ],
+    "demoLink": "https://game-db-mocha.vercel.app/",
+    "repoLink": "https://github.com/nasirmasud/gameDB/",
+    "category": "Full-Stack",
     "details": {
-      "publishedDate": "Jan 2024",
-      "screenshots": ["/next-weather.png", "/next-weather.png", "/next-weather.png"],
+      "publishedDate": "Jul 2026",
+      "screenshots": [
+        "/site-ss/gamedb01.png",
+        "/site-ss/gamedb02.png",
+        "/site-ss/gamedb03.png",
+        "/site-ss/gamedb04.png"
+      ],
       "features": [
-        "Location Search",
-        "Detailed Forecasts",
-        "Authentication (NextAuth)",
-        "Type-safe Validation (Zod)",
-        "Saved Locations",
-        "Responsive Design"
+        "RAWG API Integration for 500K+ games",
+        "Advanced Search & Multi-Filter System",
+        "User Reviews with 1-5 Star Ratings",
+        "Wishlist/Favorites Management",
+        "Custom Game Submission System",
+        "Role-Based Access Control (User/Admin)",
+        "Admin Dashboard with Analytics & Charts",
+        "User Dashboard with Activity Feed",
+        "Dark/Light Mode Theme Switching",
+        "Responsive Mobile-First Design",
+        "JWT Authentication with 7-Day Sessions",
+        "Real-Time Moderation (Reviews & Custom Games)"
+      ],
+      "projectInfo": {
+        "duration": "3 Weeks",
+        "teamSize": "1 Developer",
+        "role": "Full-Stack Developer",
+        "client": "Personal Project"
+      },
+      "challenges": [
+        "Managing three distinct user roles (Visitor, User, Admin) with granular permissions and protecting routes accordingly.",
+        "Integrating RAWG API while handling rate limits, caching, and maintaining responsive search/filter functionality.",
+        "Building a custom game submission pipeline with image uploads, status workflows, and admin moderation."
+      ],
+      "solutions": [
+        "Implemented NextAuth v5 middleware with JWT sessions and role-based route protection, including ban detection on every request.",
+        "Used Next.js ISR with 1-hour revalidation for RAWG API caching, combined with server-side pagination for efficient data loading.",
+        "Built ImageBB integration for image hosting, Mongoose status workflows (published/draft/pending/archived), and admin moderation dashboards."
+      ],
+      "caseStudyLink": null
+    }
+  },
+  {
+    "title": "Fable | E-book Digital Marketplace Platform",
+    "description": "A full-stack e-book marketplace connecting readers, writers, and administrators. Writers publish and monetize original e-books, readers discover and purchase content, and admins manage the platform with analytics. Built with Next.js 16 (App Router) and Express.js 5, it features role-based authentication, Stripe payment integration, real-time dashboards with interactive charts, and a polished responsive UI with dark/light theming.",
+    "image": "/site-ss/fable01.png",
+    "tags": [
+      "Next.js",
+      "React",
+      "JavaScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Express",
+      "MongoDB",
+      "Stripe",
+      "BetterAuth",
+      "Framer Motion"
+    ],
+    "demoLink": "https://fable-amber.vercel.app/",
+    "repoLink": "https://github.com/nasirmasud/Fable/",
+    "category": "Full-Stack",
+    "details": {
+      "publishedDate": "Jul 2026",
+      "screenshots": [
+        "/site-ss/fable01.png",
+        "/site-ss/fable02.png",
+        "/site-ss/fable03.png",
+        "/site-ss/fable04.png"
+      ],
+      "features": [
+        "Email/Password + Google OAuth Authentication",
+        "Three Role-Based Dashboards (Reader, Writer, Admin)",
+        "Stripe Checkout for E-book Purchases",
+        "Public E-book Catalog with Filtering",
+        "Writer Dashboard with Sales Analytics & Charts",
+        "Admin Dashboard with Revenue & User Growth Charts",
+        "Reader Library & Purchase History",
+        "Bookmark/Wishlist System",
+        "Dark / Light Mode Theming",
+        "Responsive UI with Mobile Navigation",
+        "Server-Side Route Protection via requireRole()",
+        "Real-time Toast Notifications"
+      ],
+      "projectInfo": {
+        "duration": "2 Months",
+        "teamSize": "1 Developer",
+        "role": "Full-Stack Developer",
+        "client": "Personal Project"
+      },
+      "challenges": [
+        "Implementing role-based authentication and server-side route protection for three distinct user roles (reader, writer, admin) while maintaining a seamless UX across dashboards.",
+        "Integrating Stripe checkout sessions for e-book purchases with proper server-side session creation and post-purchase success handling.",
+        "Building separate analytics dashboards for each role with interactive charts (Recharts) showing sales history, revenue trends, and user growth over configurable time ranges."
+      ],
+      "solutions": [
+        "Used BetterAuth with email/password and Google OAuth, combined with custom requireRole() middleware in Next.js layout files and Express.js server-side session helpers for secure route guards.",
+        "Created dedicated Stripe checkout session API routes on the Next.js server with @stripe/stripe-js client-side integration, handling redirects and success page rendering after payment confirmation.",
+        "Built role-specific dashboard components using Recharts for line charts and statistics cards, with server-side data fetching utilities (serverFetch, protectedFetch) and Server Actions for mutations."
+      ],
+      "caseStudyLink": null
+    }
+  },
+  {
+    "title": "MediQueue | Medical Tutoring Marketplace",
+    "description": "A full-stack medical tutoring marketplace where students can browse expert medical tutors, book 1-on-1 sessions, and manage their learning schedules. Built with Next.js 16 (App Router) and Express.js, it features advanced tutor search with filters, JWT-protected booking system with slot management, Google OAuth authentication, and a polished responsive UI with dark/light mode.",
+    "image": "/site-ss/mediqueue01.png",
+    "tags": [
+      "Next.js",
+      "React",
+      "Tailwind",
+      "DaisyUI",
+      "HeroUI",
+      "Express",
+      "MongoDB",
+      "Better Auth",
+      "Swiper"
+    ],
+    "demoLink": "https://b13-a9-client.vercel.app/",
+    "repoLink": "https://github.com/nasirmasud/MediQueue/",
+    "category": "Full-Stack",
+    "details": {
+      "publishedDate": "Jul 2026",
+      "screenshots": [
+        "/site-ss/mediqueue01.png",
+        "/site-ss/mediqueue02.png",
+        "/site-ss/mediqueue03.png",
+        "/site-ss/mediqueue04.png"
+      ],
+      "features": [
+        "Hero Carousel with Swiper Autoplay",
+        "Browse Tutors with Advanced Search & Filters",
+        "Tutor Detail Pages with Booking Widget",
+        "1-on-1 Session Booking with Date Picker",
+        "JWT-Protected Booking & Slot Management",
+        "Booked Sessions Dashboard",
+        "Add Tutor Form with 14 Fields",
+        "My Tutors Inline Edit & Delete",
+        "Google OAuth + Email Auth (Better Auth)",
+        "Dark / Light Mode Toggle",
+        "Responsive Mobile Slide-Out Menu",
+        "Custom 404 Page"
       ],
       "projectInfo": {
         "duration": "1 Month",
         "teamSize": "1 Developer",
-        "role": "Full Stack Developer",
-        "client": "Personal Project"
+        "role": "Full-Stack Developer",
+        "client": "ProgrammingHero Assignment (Batch 13, A09)"
       },
       "challenges": [
-        "Normalizing inconsistent data from third-party weather APIs.",
-        "Keeping forecast data fresh without excessive API calls.",
-        "Validating user input across forms reliably."
+        "Implementing JWT-protected booking endpoints with asymmetric JWKS-based token verification using jose-cjs.",
+        "Building advanced tutor search with real-time debounced filtering across multiple fields (name, subject, institution).",
+        "Managing slot availability with atomic decrement operations on successful bookings."
       ],
       "solutions": [
-        "Wrote a normalization layer to unify API response shapes.",
-        "Added caching with Prisma/PostgreSQL for recently viewed locations.",
-        "Used Zod schemas shared between client and server for validation."
+        "Used jose-cjs createRemoteJWKSet to fetch JWKS from the Next.js client and verify tokens asymmetrically on the backend.",
+        "Created a custom useDebounce hook with 400ms delay, filtering tutors by name, subject, and institution via query parameters.",
+        "Implemented PATCH /tutors/:id/decrease-slot endpoint with MongoDB atomic operations to prevent overbooking."
       ],
       "caseStudyLink": null
     }
   },
   {
-    "title": "Next Ecommerce | A FullStack eCommerce Platform",
-    "description": "Next Ecommerce is a comprehensive, full-stack commerce solution designed to provide a seamless end-to-end shopping experience through a high-performance, server-side rendered storefront. The platform bridges the gap between customer engagement and operational management, featuring a dynamic product catalog with real-time cart calculations, integrated user reviews, and a secure multi-step checkout process. Beyond the consumer interface, it includes a robust administrative dashboard for real-time analytics, order tracking, and inventory control. Built with a focus on modern UX standards, the application ensures high accessibility and performance across all devices, complete with automated email notifications, secure payment processing, and native dark mode support.",
-    "image": "/next-ecommerce.png",
-    "tags": ["Next.js", "TypeScript", "Tailwind", "Radix UI", "Zod", "NextAuth.js", "Prisma ORM", "PostgreSQL"],
-    "demoLink": "https://next-ecommerce-coral-rho.vercel.app/",
-    "repoLink": "https://github.com/nasirmasud/next-ecommerce/",
-    "category": "Full Stack",
+    "title": "KeenKeeper | Friend Interaction Dashboard",
+    "description": "A modern friend interaction dashboard built with Next.js that helps you nurture and track your most meaningful relationships. It provides a visual overview of your social connections, interaction history, and analytics to ensure you never lose touch with the people who matter most.",
+    "image": "/site-ss/keenkeeper01.png",
+    "tags": [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "DaisyUI",
+      "Recharts",
+      "Context API"
+    ],
+    "demoLink": "https://b13-a7-keen-keeper.vercel.app/",
+    "repoLink": "https://github.com/nasir-masud/b13-a7",
+    "category": "Full-Stack",
     "details": {
-      "publishedDate": "Jul 2024",
-      "screenshots": ["/next-ecommerce.png", "/next-ecommerce.png", "/next-ecommerce.png"],
+      "publishedDate": "Jul 2026",
+      "screenshots": [
+        "/site-ss/keenkeeper01.png",
+        "/site-ss/keenkeeper02.png",
+        "/site-ss/keenkeeper03.png"
+      ],
       "features": [
-        "Dynamic Product Catalog",
-        "Real-time Cart Calculations",
-        "Multi-step Checkout",
-        "Admin Dashboard & Analytics",
-        "Order Tracking",
-        "Dark Mode"
+        "Friend Analytics Dashboard with Interactive Pie Charts",
+        "Personal Relationship Manager with Dynamic Routes",
+        "Activity Timeline with Type-based Filtering",
+        "Friend Status Tracking (On Track / Overdue / Almost Due)",
+        "Interaction Logging (Call, Text, Video)",
+        "Persistent Data with localStorage",
+        "Snooze, Archive, and Delete Actions",
+        "Responsive Multi-Page UI",
+        "Custom 404 Page",
+        "SEO-friendly Metadata Generation"
       ],
       "projectInfo": {
-        "duration": "3 Months",
+        "duration": "2 Weeks",
         "teamSize": "1 Developer",
-        "role": "Full Stack Developer",
+        "role": "Full-Stack Developer",
         "client": "Personal Project"
       },
       "challenges": [
-        "Implementing a smooth, real-time cart experience across devices.",
-        "Handling secure payments and order management.",
-        "Managing large product catalogs with fast search."
+        "Managing shared state for friends and interactions across multiple pages without a backend database.",
+        "Making the timeline filterable by interaction type while keeping the UI responsive and smooth.",
+        "Fetching friend data server-side for dynamic routes while maintaining client-side interaction state."
       ],
       "solutions": [
-        "Used optimistic UI updates for instant cart feedback.",
-        "Integrated a secure checkout flow with server-side validation.",
-        "Indexed product data in PostgreSQL for fast, scalable search."
+        "Used React Context API with localStorage persistence to share and store interaction data across all components.",
+        "Built a filter-based timeline component with a dropdown selector and conditional rendering for each interaction type.",
+        "Leveraged Next.js App Router with async server components for friend data fetching and client components for interaction logging."
+      ],
+      "caseStudyLink": null
+    }
+  },
+  {
+    "title": "SkillSphere | Online Skill Learning Platform",
+    "description": "A modern full-stack e-learning platform built with Next.js 16 and React 19 that enables users to browse, discover, and enroll in courses across various skill categories. Features secure authentication with email/password and Google OAuth powered by Better Auth, dynamic course listings with search and filtering, user profile management, and a polished responsive UI with smooth Framer Motion animations. The platform uses MongoDB for data persistence and follows a server-first architecture with Next.js App Router.",
+    "image": "/site-ss/skill01.png",
+    "tags": [
+      "Next.js",
+      "React",
+      "JavaScript",
+      "Tailwind CSS",
+      "DaisyUI",
+      "HeroUI",
+      "Framer Motion",
+      "Better Auth",
+      "MongoDB"
+    ],
+    "demoLink": "http://b13-a8.vercel.app",
+    "repoLink": "https://github.com/nasirmasud/SkillSphere/",
+    "category": "Full-Stack",
+    "details": {
+      "publishedDate": "Jul 2026",
+      "screenshots": ["/site-ss/skill01.png", "/site-ss/skill02.png", "/site-ss/skill03.png"],
+      "features": [
+        "Email/Password + Google OAuth Authentication",
+        "Session-Based Auth with Better Auth & MongoDB",
+        "Dynamic Course Catalog with Search",
+        "Popular & Trending Course Sections",
+        "Detailed Course Pages with Instructor Info",
+        "User Profile Management with Image Update",
+        "Responsive Mobile-First Design",
+        "Smooth Scroll & Hover Animations (Framer Motion)",
+        "Protected Routes with Middleware",
+        "Toast Notifications for Auth Events"
+      ],
+      "projectInfo": {
+        "duration": "1 Month",
+        "teamSize": "1 Developer",
+        "role": "Full-Stack Developer",
+        "client": "Programming Hero (Assignment 8)"
+      },
+      "challenges": [
+        "Implementing session-based authentication with Better Auth and MongoDB while protecting specific routes via middleware.",
+        "Building a seamless responsive navigation experience with separate mobile drawer and desktop layouts.",
+        "Fetching and sorting course data server-side for popular (by rating) and trending (by learners) sections while keeping the client-side search performant."
+      ],
+      "solutions": [
+        "Integrated Better Auth with a MongoDB adapter and Google OAuth social provider, using middleware to guard /profile and /all-courses routes.",
+        "Designed a dual-navigation system with a desktop Navbar and a slide-out mobile drawer, both sharing consistent styling with Tailwind and DaisyUI.",
+        "Used Next.js App Router server components to pre-sort courses by rating and learner count, then passed props to client components for interactive search with query parameter persistence."
+      ],
+      "caseStudyLink": null
+    }
+  },
+  {
+    "title": "DigiTools Platform | Digital Tools Buying Website",
+    "description": "A responsive e-commerce-style product catalog and shopping cart website for digital tools. Users can browse 10 digital products (design tools, AI assistants, VPNs, etc.), view details and pricing, add items to a cart, remove items, and proceed to checkout. Built with React.js, styled with Tailwind CSS and DaisyUI, and features toast notifications for all cart actions.",
+    "image": "/site-ss/digi01.png",
+    "tags": [
+      "React.js",
+      "JavaScript",
+      "Tailwind CSS",
+      "DaisyUI",
+      "React-Toastify",
+      "JSON"
+    ],
+    "demoLink": "https://digitools-nasirmasud.netlify.app/",
+    "repoLink": "https://github.com/nasirmasud/B13-A6/",
+    "category": "Front-End",
+    "details": {
+      "publishedDate": "Apr 2026",
+      "screenshots": [
+        "/site-ss/digi01.png",
+        "/site-ss/digi02.png",
+        "/site-ss/digi03.png",
+        "/site-ss/digi04.png"
+      ],
+      "features": [
+        "Responsive Navbar with Cart Item Count",
+        "Banner Section with CTA Buttons",
+        "Toggleable Product & Cart Views",
+        "10 Product Cards in Responsive Grid",
+        "Add to Cart with Buy Now Button",
+        "Remove Items from Cart",
+        "Proceed to Checkout (Clears Cart)",
+        "Toast Notifications for All Cart Actions",
+        "Stats, Steps, and Pricing Sections",
+        "Fully Responsive Design"
+      ],
+      "projectInfo": {
+        "duration": "1 Week",
+        "teamSize": "1 Developer",
+        "role": "Front-End Developer",
+        "client": "ProgrammingHero Assignment (B13-A06)"
+      },
+      "challenges": [
+        "Managing cart state across multiple components while keeping the UI in sync.",
+        "Building a toggleable main section that switches between product listing and cart view seamlessly.",
+        "Ensuring full responsiveness across all screen sizes for product cards, cart, and layout sections."
+      ],
+      "solutions": [
+        "Used React state lifting and props to share cart data between Product and Cart components.",
+        "Implemented conditional rendering with state-driven toggle buttons for the main section.",
+        "Applied Tailwind CSS utility classes and DaisyUI components for a mobile-first responsive layout."
+      ],
+      "caseStudyLink": null
+    }
+  },
+  {
+    "title": "GitHub Issue Tracker",
+    "description": "A client-side web application for tracking and managing GitHub issues. Features a login page with demo credentials, an issue dashboard with card-based UI, tab filtering (All/Open/Closed), real-time search, and a detail modal for viewing individual issues. Built with vanilla HTML, Tailwind CSS, and JavaScript, fetching data from a remote API.",
+    "image": "/site-ss/issue01.png",
+    "tags": [
+      "HTML",
+      "Tailwind CSS",
+      "DaisyUI",
+      "JavaScript",
+      "Vanilla JS",
+      "REST API"
+    ],
+    "demoLink": "https://nasirmasud.github.io/B13-A05/",
+    "repoLink": "https://github.com/nasirmasud/B13-A05",
+    "category": "Frontend",
+    "details": {
+      "publishedDate": "Jul 2026",
+      "screenshots": ["/site-ss/issue01.png", "/site-ss/issue02.png", "/site-ss/issue03.png"],
+      "features": [
+        "Login Page with Demo Credentials",
+        "Issue Dashboard with Card Grid Layout",
+        "Tab Filtering (All / Open / Closed)",
+        "Real-time Search Functionality",
+        "Issue Detail Modal with Full Info",
+        "Responsive Design with Tailwind CSS",
+        "Dynamic Status & Priority Indicators",
+        "Color-coded Label Badges"
+      ],
+      "projectInfo": {
+        "duration": "1 Week",
+        "teamSize": "1 Developer",
+        "role": "Frontend Developer",
+        "client": "Programming Hero Assignment"
+      },
+      "challenges": [
+        "Fetching and rendering dynamic issue data from a remote API endpoint.",
+        "Implementing real-time search that filters results while respecting the active tab filter.",
+        "Building a responsive card grid layout that adapts across mobile, tablet, and desktop breakpoints."
+      ],
+      "solutions": [
+        "Used the Fetch API with async/await to retrieve issue data and render cards dynamically with vanilla JavaScript.",
+        "Implemented a dual-filter approach where search results are further filtered by the current tab status.",
+        "Leveraged Tailwind CSS grid utilities (grid-cols-1 sm:grid-cols-2 lg:grid-cols-4) for responsive layouts."
+      ],
+      "caseStudyLink": null
+    }
+  },
+  {
+    "title": "Weather \u2013 Weather Forecast App",
+    "description": "A clean, responsive weather forecast web application that fetches real-time and multi-day weather data for any city worldwide. Powered by the OpenWeatherMap API, it features city search with autocomplete, geolocation-based current location detection, hourly and 7-day forecasts, and a detailed weather metrics panel.",
+    "image": "/site-ss/weather01.png",
+    "tags": [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS",
+      "Jotai",
+      "TanStack React Query",
+      "Axios",
+      "date-fns",
+      "OpenWeatherMap API"
+    ],
+    "demoLink": "https://next-weather-nine.vercel.app/",
+    "repoLink": "https://github.com/nasirmasud/next-weather/",
+    "category": "Front-End",
+    "details": {
+      "publishedDate": "Jul 2026",
+      "screenshots": ["/site-ss/weather01.png", "/site-ss/weather02.png"],
+      "features": [
+        "Real-Time City Weather Display with temperature, feels-like, and min/max",
+        "Hourly Forecast Strip with scrollable weather intervals",
+        "7-Day Detailed Forecast with weather icons and conditions",
+        "City Search with Autocomplete Suggestions",
+        "Browser Geolocation with Reverse Geocoding",
+        "Weather Details Panel (Visibility, Humidity, Wind, Pressure, Sunrise/Sunset)",
+        "Day/Night Icon Logic based on forecast timestamp",
+        "Loading Skeleton Placeholders during data fetch",
+        "Responsive Mobile-First Design",
+        "Atomic State Management with Jotai",
+        "Server State Caching with TanStack React Query"
+      ],
+      "projectInfo": {
+        "duration": "1 Week",
+        "teamSize": "1 Developer",
+        "role": "Front-End Developer",
+        "client": "Personal Project"
+      },
+      "challenges": [
+        "Handling OpenWeatherMap API rate limits and ensuring smooth data fetching without excessive calls.",
+        "Designing a clean UI that works well on both desktop and mobile with horizontal scrollable forecast strips.",
+        "Implementing accurate day/night icon switching based on forecast timestamps."
+      ],
+      "solutions": [
+        "Used TanStack React Query for intelligent caching and deduplication of API requests with configurable stale times.",
+        "Built a mobile-first responsive layout using Tailwind CSS with overflow scroll for forecast cards.",
+        "Created a utility function that checks forecast timestamps against 6 AM\u20136 PM window to swap icon suffixes between day and night variants."
       ],
       "caseStudyLink": null
     }
