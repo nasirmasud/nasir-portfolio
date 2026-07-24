@@ -6,7 +6,36 @@
     "tags": ["React", "TypeScript", "Tailwind", "Vite", "Chakra UI"],
     "demoLink": "https://rawg-game-hub-api.netlify.app/",
     "repoLink": "https://github.com/nasirmasud/gameHub/",
-    "category": "Frontend"
+    "category": "Frontend",
+    "details": {
+      "publishedDate": "Mar 2024",
+      "screenshots": ["/game-hub.png", "/game-hub.png", "/game-hub.png"],
+      "features": [
+        "Real-time Search",
+        "Genre & Platform Filters",
+        "Dark / Light Mode",
+        "Responsive Grid Layout",
+        "Custom Data Hooks",
+        "Critic Score Integration"
+      ],
+      "projectInfo": {
+        "duration": "1.5 Months",
+        "teamSize": "1 Developer",
+        "role": "Frontend Developer",
+        "client": "Personal Project"
+      },
+      "challenges": [
+        "Querying and paginating a 500,000+ game database without janky UI.",
+        "Keeping filter state, search, and routing in sync.",
+        "Delivering optimized images across wildly different aspect ratios."
+      ],
+      "solutions": [
+        "Built custom hooks to debounce search and cache API responses.",
+        "Centralized filter state and synced it to the URL for shareable views.",
+        "Used responsive image loading with lazy-loaded grid items."
+      ],
+      "caseStudyLink": null
+    }
   },
   {
     "title": "Next Properties | A Modern Real Estate Platform",
@@ -15,7 +44,36 @@
     "tags": ["Next.js", "MongoDB", "NextAuth.js", "Tailwind", "Cloudinary"],
     "demoLink": "https://next-properties-seven.vercel.app/",
     "repoLink": "https://github.com/nasirmasud/next-properties/",
-    "category": "Full Stack"
+    "category": "Full Stack",
+    "details": {
+      "publishedDate": "May 2024",
+      "screenshots": ["/next-properties.png", "/next-properties.png", "/next-properties.png"],
+      "features": [
+        "Authentication (NextAuth)",
+        "Saved Favorites",
+        "Owner Messaging",
+        "Image Galleries (Cloudinary)",
+        "Location-based Maps",
+        "Responsive Design"
+      ],
+      "projectInfo": {
+        "duration": "2 Months",
+        "teamSize": "1 Developer",
+        "role": "Full Stack Developer",
+        "client": "Personal Project"
+      },
+      "challenges": [
+        "Handling real-time messaging between renters and owners.",
+        "Structuring flexible property data in MongoDB.",
+        "Serving optimized image galleries at scale."
+      ],
+      "solutions": [
+        "Built a lightweight messaging system on top of Next.js API routes.",
+        "Designed a flexible MongoDB schema with indexed search fields.",
+        "Used Cloudinary transformations for on-the-fly image optimization."
+      ],
+      "caseStudyLink": null
+    }
   },
   {
     "title": "Next Weather | A Weather Application",
@@ -24,7 +82,36 @@
     "tags": ["Next.js", "TypeScript", "Tailwind", "Radix UI", "Zod", "NextAuth.js", "Prisma ORM", "PostgreSQL"],
     "demoLink": "https://next-weather-gold.vercel.app/",
     "repoLink": "https://github.com/nasirmasud/next-weather/",
-    "category": "Full Stack"
+    "category": "Full Stack",
+    "details": {
+      "publishedDate": "Jan 2024",
+      "screenshots": ["/next-weather.png", "/next-weather.png", "/next-weather.png"],
+      "features": [
+        "Location Search",
+        "Detailed Forecasts",
+        "Authentication (NextAuth)",
+        "Type-safe Validation (Zod)",
+        "Saved Locations",
+        "Responsive Design"
+      ],
+      "projectInfo": {
+        "duration": "1 Month",
+        "teamSize": "1 Developer",
+        "role": "Full Stack Developer",
+        "client": "Personal Project"
+      },
+      "challenges": [
+        "Normalizing inconsistent data from third-party weather APIs.",
+        "Keeping forecast data fresh without excessive API calls.",
+        "Validating user input across forms reliably."
+      ],
+      "solutions": [
+        "Wrote a normalization layer to unify API response shapes.",
+        "Added caching with Prisma/PostgreSQL for recently viewed locations.",
+        "Used Zod schemas shared between client and server for validation."
+      ],
+      "caseStudyLink": null
+    }
   },
   {
     "title": "Next Ecommerce | A FullStack eCommerce Platform",
@@ -33,6 +120,35 @@
     "tags": ["Next.js", "TypeScript", "Tailwind", "Radix UI", "Zod", "NextAuth.js", "Prisma ORM", "PostgreSQL"],
     "demoLink": "https://next-ecommerce-coral-rho.vercel.app/",
     "repoLink": "https://github.com/nasirmasud/next-ecommerce/",
-    "category": "Full Stack"
+    "category": "Full Stack",
+    "details": {
+      "publishedDate": "Jul 2024",
+      "screenshots": ["/next-ecommerce.png", "/next-ecommerce.png", "/next-ecommerce.png"],
+      "features": [
+        "Dynamic Product Catalog",
+        "Real-time Cart Calculations",
+        "Multi-step Checkout",
+        "Admin Dashboard & Analytics",
+        "Order Tracking",
+        "Dark Mode"
+      ],
+      "projectInfo": {
+        "duration": "3 Months",
+        "teamSize": "1 Developer",
+        "role": "Full Stack Developer",
+        "client": "Personal Project"
+      },
+      "challenges": [
+        "Implementing a smooth, real-time cart experience across devices.",
+        "Handling secure payments and order management.",
+        "Managing large product catalogs with fast search."
+      ],
+      "solutions": [
+        "Used optimistic UI updates for instant cart feedback.",
+        "Integrated a secure checkout flow with server-side validation.",
+        "Indexed product data in PostgreSQL for fast, scalable search."
+      ],
+      "caseStudyLink": null
+    }
   }
 ]
