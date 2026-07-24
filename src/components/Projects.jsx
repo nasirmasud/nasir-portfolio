@@ -1,4 +1,5 @@
 import { motion } from "framer-motion"; // Framer Motion ইম্পোর্ট করা হয়েছে
+import { Link } from "react-router-dom";
 import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
@@ -98,6 +99,12 @@ const Projects = () => {
               Featured Projects
             </h2>
           </div>
+          <Link
+            to='/all-projects'
+            className='text-primary hover:underline font-semibold text-lg flex items-center gap-1'
+          >
+            All Projects <span aria-hidden='true'>&rarr;</span>
+          </Link>
         </motion.div>
 
         {/* Project Cards Grid with Stagger Effect */}
