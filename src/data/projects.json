@@ -5,7 +5,8 @@
     "image": "/game-hub.png",
     "tags": ["React", "TypeScript", "Tailwind", "Vite", "Chakra UI"],
     "demoLink": "https://rawg-game-hub-api.netlify.app/",
-    "repoLink": "https://github.com/nasirmasud/gameHub/"
+    "repoLink": "https://github.com/nasirmasud/gameHub/",
+    "category": "Frontend"
   },
   {
     "title": "Next Properties | A Modern Real Estate Platform",
@@ -13,7 +14,8 @@
     "image": "/next-properties.png",
     "tags": ["Next.js", "MongoDB", "NextAuth.js", "Tailwind", "Cloudinary"],
     "demoLink": "https://next-properties-seven.vercel.app/",
-    "repoLink": "https://github.com/nasirmasud/next-properties/"
+    "repoLink": "https://github.com/nasirmasud/next-properties/",
+    "category": "Full Stack"
   },
   {
     "title": "Next Weather | A Weather Application",
@@ -21,7 +23,8 @@
     "image": "/next-weather.png",
     "tags": ["Next.js", "TypeScript", "Tailwind", "Radix UI", "Zod", "NextAuth.js", "Prisma ORM", "PostgreSQL"],
     "demoLink": "https://next-weather-gold.vercel.app/",
-    "repoLink": "https://github.com/nasirmasud/next-weather/"
+    "repoLink": "https://github.com/nasirmasud/next-weather/",
+    "category": "Full Stack"
   },
   {
     "title": "Next Ecommerce | A FullStack eCommerce Platform",
@@ -29,6 +32,7 @@
     "image": "/next-ecommerce.png",
     "tags": ["Next.js", "TypeScript", "Tailwind", "Radix UI", "Zod", "NextAuth.js", "Prisma ORM", "PostgreSQL"],
     "demoLink": "https://next-ecommerce-coral-rho.vercel.app/",
-    "repoLink": "https://github.com/nasirmasud/next-ecommerce/"
+    "repoLink": "https://github.com/nasirmasud/next-ecommerce/",
+    "category": "Full Stack"
   }
 ]

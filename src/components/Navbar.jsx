@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Home, Menu, X } from "lucide-react";
 import { useState } from "react";
 import NavContact from "./NavContact";
 
@@ -31,6 +31,16 @@ const Navbar = () => {
           {/* Right Section - Desktop Navigation */}
           <div className='hidden md:flex items-center gap-8'>
             <div className='flex items-center space-x-8'>
+              <motion.a
+                href='/'
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                className='text-gray-400 hover:text-white transition-colors relative group'
+                aria-label='Home'
+              >
+                <Home size={18} />
+                <span className='absolute -bottom-1 left-0 w-0 h-0.5 bg-purple-500 group-hover:w-full transition-all duration-300' />
+              </motion.a>
               {navItems.map((item, index) => (
                 <motion.a
                   key={item.name}
@@ -78,6 +88,15 @@ const Navbar = () => {
             className='absolute top-full right-0 w-1/3 bg-black/95 border-b border-white/10 p-6 md:hidden'
           >
             <div className='flex flex-col gap-4'>
+              <motion.a
+                href='/'
+                onClick={() => setIsOpen(false)}
+                whileHover={{ x: 10, color: "#a855f7" }}
+                whileTap={{ scale: 0.95 }}
+                className='text-xl text-gray-300 font-medium transition-colors flex items-center gap-2'
+              >
+                <Home size={20} /> Home
+              </motion.a>
               {navItems.map((item) => (
                 <motion.a
                   key={item.name}
