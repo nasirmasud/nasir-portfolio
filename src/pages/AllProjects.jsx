@@ -2,22 +2,18 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import projects from "@/data/projects.json";
 import {
-  ArrowRight,
+  AlertCircle,
   ArrowLeft,
+  ArrowRight,
   CheckCircle2,
   Code2,
   ExternalLink,
-  FileText,
   Github,
-  Grid3x3,
-  Lightbulb,
   Layers,
+  Lightbulb,
+  Send,
   Star,
-  User,
-  Users,
   X,
-  Calendar,
-  AlertCircle,
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
@@ -29,19 +25,38 @@ const CATEGORY_STYLES = {
 };
 
 const TECH_LOGOS = {
-  "Next.js": "/logo/next-js.svg",
-  React: "/logo/react.svg",
-  TypeScript: null,
-  Tailwind: "/logo/tailwind.svg",
-  Vite: null,
-  "Chakra UI": null,
-  MongoDB: "/logo/mongodb.svg",
+  "Next.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+  React: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  TypeScript: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+  Tailwind: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+  Express: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+  MongoDB: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+  JavaScript: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+  HTML: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+  CSS: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+  Vite: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg",
+  "Chakra UI": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chakraui/chakraui-original.svg",
+  "Prisma ORM": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg",
+  PostgreSQL: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+  "Framer Motion": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/framermotion/framermotion-original.svg",
+  Swiper: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swiper/swiper-original.svg",
+  "Chart.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chartjs/chartjs-original.svg",
   "NextAuth.js": null,
   Cloudinary: null,
   "Radix UI": null,
   Zod: null,
-  "Prisma ORM": null,
-  PostgreSQL: null,
+  "shadcn/ui": null,
+  "TanStack Query": null,
+  "Rawg API": null,
+  BetterAuth: null,
+  DaisyUI: null,
+  HeroUI: null,
+  Recharts: null,
+  Jotai: null,
+  Axios: null,
+  "date-fns": null,
+  "React-Toastify": null,
+  Stripe: null,
 };
 
 const TECH_STYLE = {
@@ -182,7 +197,7 @@ function ProjectDetailsModal({ project, index, total, onClose, onNext, onPrev })
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-start sm:items-center justify-center p-3 sm:p-6 overflow-y-auto"
+      className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-start justify-center p-3 sm:p-6 overflow-y-auto"
       onClick={onClose}
     >
       <div
@@ -190,7 +205,7 @@ function ProjectDetailsModal({ project, index, total, onClose, onNext, onPrev })
         className="bg-[#0d0d13] border border-white/10 rounded-2xl w-full max-w-4xl my-6 sm:my-0 relative"
       >
         {/* Header */}
-        <div className="flex items-start justify-between p-6 pb-4">
+        <div className="flex items-start justify-between pt-6 px-6 pb-4">
           <div>
             <span className="inline-flex items-center gap-1.5 text-xs font-medium text-amber-300 bg-amber-500/10 border border-amber-500/20 rounded-md px-2.5 py-1 mb-3">
               <Star size={12} fill="currentColor" /> Featured Project
@@ -230,11 +245,10 @@ function ProjectDetailsModal({ project, index, total, onClose, onNext, onPrev })
                 <button
                   key={i}
                   onClick={() => setActiveShot(i)}
-                  className={`h-16 rounded-lg overflow-hidden border-2 transition-colors ${
-                    activeShot === i
-                      ? "border-violet-500"
-                      : "border-white/10 hover:border-white/30"
-                  }`}
+                  className={`h-16 rounded-lg overflow-hidden border-2 transition-colors ${activeShot === i
+                    ? "border-violet-500"
+                    : "border-white/10 hover:border-white/30"
+                    }`}
                 >
                   <SmartImage
                     src={shot}
@@ -302,12 +316,12 @@ function ProjectDetailsModal({ project, index, total, onClose, onNext, onPrev })
         </div>
 
         {/* Links */}
-        <div className="mx-6 mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="mx-6 mt-5 flex flex-wrap justify-center gap-3">
           <a
             href={project.demoLink}
             target="_blank"
             rel="noreferrer"
-            className="bg-violet-600 hover:bg-violet-500 transition-colors text-white text-sm font-medium rounded-lg py-2.5 flex items-center justify-center gap-2"
+            className="bg-violet-600 hover:bg-violet-500 transition-colors text-white text-sm font-medium rounded-lg py-2.5 px-4 flex items-center justify-center gap-2"
           >
             Live Demo <ExternalLink size={14} />
           </a>
@@ -315,7 +329,7 @@ function ProjectDetailsModal({ project, index, total, onClose, onNext, onPrev })
             href={project.repoLink}
             target="_blank"
             rel="noreferrer"
-            className="bg-transparent border border-white/15 hover:border-white/30 transition-colors text-white text-sm font-medium rounded-lg py-2.5 flex items-center justify-center gap-2"
+            className="bg-transparent border border-white/15 hover:border-white/30 transition-colors text-white text-sm font-medium rounded-lg py-2.5 px-4 flex items-center justify-center gap-2"
           >
             <Github size={14} /> GitHub Repository
           </a>
@@ -377,9 +391,109 @@ function ProjectDetailsModal({ project, index, total, onClose, onNext, onPrev })
   );
 }
 
+function ContactModal({ onClose }) {
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6 overflow-y-auto"
+      onClick={onClose}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="bg-[#0d0d13] border border-white/10 rounded-2xl w-full max-w-lg relative"
+      >
+        <div className="flex items-center justify-between p-6 pb-0">
+          <div>
+            <h2 className="text-2xl font-bold text-white">Get In Touch</h2>
+            <p className="text-slate-400 text-sm mt-1">
+              Fill out the form and I'll get back to you soon.
+            </p>
+          </div>
+          <button
+            onClick={onClose}
+            className="bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 rounded-lg p-2 shrink-0"
+            aria-label="Close"
+          >
+            <X size={16} />
+          </button>
+        </div>
+
+        <form
+          className="p-6 space-y-5"
+          onSubmit={(e) => e.preventDefault()}
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div className="space-y-1.5">
+              <label htmlFor="modal-name" className="text-sm font-medium text-slate-300">
+                Name
+              </label>
+              <input
+                type="text"
+                id="modal-name"
+                className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all placeholder:text-slate-500"
+                placeholder="John Doe"
+              />
+            </div>
+            <div className="space-y-1.5">
+              <label htmlFor="modal-email" className="text-sm font-medium text-slate-300">
+                Email
+              </label>
+              <input
+                type="email"
+                id="modal-email"
+                className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all placeholder:text-slate-500"
+                placeholder="john@example.com"
+              />
+            </div>
+          </div>
+
+          <div className="space-y-1.5">
+            <label htmlFor="modal-subject" className="text-sm font-medium text-slate-300">
+              Subject
+            </label>
+            <input
+              type="text"
+              id="modal-subject"
+              className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all placeholder:text-slate-500"
+              placeholder="Project inquiry"
+            />
+          </div>
+
+          <div className="space-y-1.5">
+            <label htmlFor="modal-message" className="text-sm font-medium text-slate-300">
+              Message
+            </label>
+            <textarea
+              id="modal-message"
+              rows={4}
+              className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all placeholder:text-slate-500 resize-none"
+              placeholder="Tell me about your project..."
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full py-3 bg-violet-600 hover:bg-violet-500 transition-colors text-white text-sm font-medium rounded-lg flex items-center justify-center gap-2"
+          >
+            Send Message <Send size={14} />
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
 export default function AllProjects() {
   const [activeFilter, setActiveFilter] = useState("All Projects");
   const [openIndex, setOpenIndex] = useState(null);
+  const [contactOpen, setContactOpen] = useState(false);
 
   const filtered = useMemo(() => {
     if (activeFilter === "All Projects") return projects;
@@ -416,11 +530,10 @@ export default function AllProjects() {
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`text-sm px-4 py-2 rounded-lg border transition-colors ${
-                  activeFilter === filter
-                    ? "bg-violet-600 border-violet-600 text-white"
-                    : "bg-transparent border-white/10 text-slate-300 hover:border-violet-500/40 hover:text-white"
-                }`}
+                className={`text-sm px-4 py-2 rounded-lg border transition-colors ${activeFilter === filter
+                  ? "bg-violet-600 border-violet-600 text-white"
+                  : "bg-transparent border-white/10 text-slate-300 hover:border-violet-500/40 hover:text-white"
+                  }`}
               >
                 {filter}
               </button>
@@ -465,16 +578,12 @@ export default function AllProjects() {
                 </p>
               </div>
             </div>
-            <a
-              href="/#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.href = "/#contact";
-              }}
+            <button
+              onClick={() => setContactOpen(true)}
               className="bg-violet-600 hover:bg-violet-500 transition-colors text-white text-sm font-medium px-5 py-2.5 rounded-lg flex items-center gap-2 whitespace-nowrap"
             >
               Get In Touch <ArrowRight size={15} />
-            </a>
+            </button>
           </div>
         </div>
       </main>
@@ -489,6 +598,10 @@ export default function AllProjects() {
           onNext={handleNext}
           onPrev={handlePrev}
         />
+      )}
+
+      {contactOpen && (
+        <ContactModal onClose={() => setContactOpen(false)} />
       )}
     </div>
   );

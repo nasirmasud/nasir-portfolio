@@ -134,42 +134,42 @@ const TechStack = () => {
   const technologies = [
     {
       name: "React",
-      icon: "/logo/react.svg", // 'public' বাদ দিয়ে পাথ
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
       color: "group-hover:shadow-cyan-400/40",
     },
     {
       name: "Next.js",
-      icon: "/logo/next-js.svg",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
       color: "group-hover:shadow-white/40",
     },
     {
       name: "Javascript",
-      icon: "/logo/javascript.svg",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
       color: "group-hover:shadow-yellow-400/40",
     },
     {
       name: "HTML5",
-      icon: "/logo/html.svg",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
       color: "group-hover:shadow-orange-500/40",
     },
     {
       name: "CSS3",
-      icon: "/logo/css.svg",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
       color: "group-hover:shadow-blue-500/40",
     },
     {
       name: "Tailwind CSS",
-      icon: "/logo/tailwind.svg",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
       color: "group-hover:shadow-teal-400/40",
     },
     {
       name: "Git",
-      icon: "/logo/git.svg",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
       color: "group-hover:shadow-orange-600/40",
     },
     {
       name: "MongoDB",
-      icon: "/logo/mongodb.svg",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
       color: "group-hover:shadow-orange-600/40",
     },
   ];
