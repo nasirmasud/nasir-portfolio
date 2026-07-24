@@ -186,9 +186,9 @@ export default function AllProjects() {
                 </p>
               </div>
             </div>
-            <button className="bg-violet-600 hover:bg-violet-500 transition-colors text-white text-sm font-medium px-5 py-2.5 rounded-lg flex items-center gap-2 whitespace-nowrap">
-              Get In Touch <ArrowRight size={15} />
-            </button>
+            <a href="/#contact" onClick={(e) => { e.preventDefault(); window.location.href = '/#contact'; }} className="bg-violet-600 hover:bg-violet-500 transition-colors text-white text-sm font-medium px-5 py-2.5 rounded-lg flex items-center gap-2 whitespace-nowrap">
+Get In Touch <ArrowRight size={15} />
+          </a>
           </div>
         </div>
       </main>

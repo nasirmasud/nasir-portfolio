@@ -56,7 +56,8 @@ const Navbar = () => {
               ))}
 
               <motion.a
-                href='#contact'
+                href='/#contact'
+                onClick={(e) => { e.preventDefault(); window.location.href = '/#contact'; }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className='bg-purple-600 hover:bg-purple-700 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-purple-500/20'
@@ -111,8 +112,8 @@ const Navbar = () => {
               ))}
 
               <motion.a
-                href='#contact'
-                onClick={() => setIsOpen(false)}
+                href='/#contact'
+                onClick={(e) => { e.preventDefault(); window.location.href = '/#contact'; setIsOpen(false); }}
                 whileTap={{ scale: 0.95 }}
                 className='text-center bg-purple-600 text-white py-3 rounded-xl font-bold'
               >
