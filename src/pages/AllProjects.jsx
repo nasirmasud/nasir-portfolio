@@ -16,6 +16,13 @@ import {
   X,
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
+import emailjs from "@emailjs/browser";
+
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+emailjs.init(PUBLIC_KEY);
 
 const FILTERS = ["All Projects", "Full Stack", "Frontend"];
 
@@ -392,6 +399,9 @@ function ProjectDetailsModal({ project, index, total, onClose, onNext, onPrev })
 }
 
 function ContactModal({ onClose }) {
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [status, setStatus] = useState("idle");
+
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "Escape") onClose();
@@ -399,6 +409,34 @@ function ContactModal({ onClose }) {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          name: form.name,
+          email: form.email,
+          title: form.subject,
+          message: form.message,
+        },
+        { publicKey: PUBLIC_KEY }
+      );
+      setStatus("success");
+      setForm({ name: "", email: "", subject: "", message: "" });
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setStatus("error");
+    }
+  };
 
   return (
     <div
@@ -427,7 +465,7 @@ function ContactModal({ onClose }) {
 
         <form
           className="p-6 space-y-5"
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={handleSubmit}
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div className="space-y-1.5">
@@ -437,6 +475,9 @@ function ContactModal({ onClose }) {
               <input
                 type="text"
                 id="modal-name"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
                 className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all placeholder:text-slate-500"
                 placeholder="John Doe"
               />
@@ -448,6 +489,9 @@ function ContactModal({ onClose }) {
               <input
                 type="email"
                 id="modal-email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
                 className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all placeholder:text-slate-500"
                 placeholder="john@example.com"
               />
@@ -461,6 +505,9 @@ function ContactModal({ onClose }) {
             <input
               type="text"
               id="modal-subject"
+              name="subject"
+              value={form.subject}
+              onChange={handleChange}
               className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all placeholder:text-slate-500"
               placeholder="Project inquiry"
             />
@@ -472,17 +519,28 @@ function ContactModal({ onClose }) {
             </label>
             <textarea
               id="modal-message"
+              name="message"
               rows={4}
+              value={form.message}
+              onChange={handleChange}
               className="w-full px-4 py-2.5 rounded-lg bg-white/5 border border-white/10 text-white text-sm focus:border-violet-500 focus:ring-1 focus:ring-violet-500 outline-none transition-all placeholder:text-slate-500 resize-none"
               placeholder="Tell me about your project..."
             />
           </div>
 
+          {status === "success" && (
+            <p className="text-sm text-green-400 font-medium">Message sent successfully! I'll get back to you soon.</p>
+          )}
+          {status === "error" && (
+            <p className="text-sm text-red-400 font-medium">Something went wrong. Please try again later.</p>
+          )}
+
           <button
             type="submit"
-            className="w-full py-3 bg-violet-600 hover:bg-violet-500 transition-colors text-white text-sm font-medium rounded-lg flex items-center justify-center gap-2"
+            disabled={status === "sending"}
+            className="w-full py-3 bg-violet-600 hover:bg-violet-500 transition-colors text-white text-sm font-medium rounded-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Send Message <Send size={14} />
+            {status === "sending" ? "Sending..." : "Send Message"} <Send size={14} />
           </button>
         </form>
       </div>

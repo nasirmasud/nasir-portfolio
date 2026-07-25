@@ -1,10 +1,49 @@
 import { motion, useInView } from "framer-motion";
 import { Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+emailjs.init(PUBLIC_KEY);
 
 const Contact = () => {
   const ref = useRef(null);
+  const formRef = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.2 });
+
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [status, setStatus] = useState("idle");
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          name: form.name,
+          email: form.email,
+          title: form.subject,
+          message: form.message,
+        },
+        { publicKey: PUBLIC_KEY }
+      );
+      setStatus("success");
+      setForm({ name: "", email: "", subject: "", message: "" });
+    } catch (err) {
+      console.error("EmailJS error:", err);
+      setStatus("error");
+    }
+  };
 
   return (
     <section id='contact' data-cmp='Contact' className='py-24' ref={ref}>
@@ -91,20 +130,24 @@ const Contact = () => {
               delay: 0.4,
             }}
           >
-            <form className='space-y-6' onSubmit={(e) => e.preventDefault()}>
+            <form ref={formRef} className='space-y-6' onSubmit={handleSubmit}>
               <div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
-                <FormInput label='Name' id='name' placeholder='John Doe' />
+                <FormInput label='Name' name='name' value={form.name} onChange={handleChange} placeholder='John Doe' />
                 <FormInput
                   label='Email'
-                  id='email'
+                  name='email'
                   type='email'
+                  value={form.email}
+                  onChange={handleChange}
                   placeholder='john@example.com'
                 />
               </div>
 
               <FormInput
                 label='Subject'
-                id='subject'
+                name='subject'
+                value={form.subject}
+                onChange={handleChange}
                 placeholder='Project inquiry'
               />
 
@@ -117,19 +160,30 @@ const Contact = () => {
                 </label>
                 <textarea
                   id='message'
+                  name='message'
                   rows={4}
+                  value={form.message}
+                  onChange={handleChange}
                   className='w-full px-4 py-3 rounded-lg bg-secondary/50 border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-muted-foreground/50 resize-none'
                   placeholder='Tell me about your project...'
                 />
               </div>
 
+              {status === "success" && (
+                <p className='text-sm text-green-500 font-medium'>Message sent successfully! I'll get back to you soon.</p>
+              )}
+              {status === "error" && (
+                <p className='text-sm text-red-500 font-medium'>Something went wrong. Please try again later.</p>
+              )}
+
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type='submit'
-                className='w-full py-3.5 bg-primary hover:bg-primary/90 text-white rounded-lg font-bold shadow-custom transition-all flex items-center justify-center gap-2'
+                disabled={status === "sending"}
+                className='w-full py-3.5 bg-primary hover:bg-primary/90 text-white rounded-lg font-bold shadow-custom transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed'
               >
-                Send Message
+                {status === "sending" ? "Sending..." : "Send Message"}
                 <Send className='w-4 h-4' />
               </motion.button>
             </form>
@@ -177,14 +231,17 @@ const ContactInfo = ({ icon, label, value, isLink, delay, isInView, linkType }) 
 };
 
 // Helper component for Form Inputs
-const FormInput = ({ label, id, placeholder, type = "text" }) => (
+const FormInput = ({ label, name, value, onChange, placeholder, type = "text" }) => (
   <div className='space-y-2'>
-    <label htmlFor={id} className='text-sm font-medium text-muted-foreground'>
+    <label htmlFor={name} className='text-sm font-medium text-muted-foreground'>
       {label}
     </label>
     <input
       type={type}
-      id={id}
+      id={name}
+      name={name}
+      value={value}
+      onChange={onChange}
       className='w-full px-4 py-3 rounded-lg bg-secondary/50 border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder:text-muted-foreground/50'
       placeholder={placeholder}
     />
