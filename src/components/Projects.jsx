@@ -1,9 +1,17 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import ProjectCard from "./ProjectCard";
+import ProjectDetailsModal from "./ProjectDetailsModal";
 import projects from "@/data/projects.json";
 
 const Projects = () => {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const handleNext = () =>
+    setOpenIndex((i) => (i === null ? null : (i + 1) % projects.length));
+  const handlePrev = () =>
+    setOpenIndex((i) => (i === null ? null : (i - 1 + projects.length) % projects.length));
   // Container
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -61,11 +69,22 @@ const Projects = () => {
         >
           {projects.slice(0, 3).map((project, index) => (
             <motion.div key={index} variants={itemVariants}>
-              <ProjectCard {...project} />
+              <ProjectCard {...project} index={index} onOpen={setOpenIndex} />
             </motion.div>
           ))}
         </motion.div>
       </div>
+
+      {openIndex !== null && (
+        <ProjectDetailsModal
+          project={projects[openIndex]}
+          index={openIndex}
+          total={projects.length}
+          onClose={() => setOpenIndex(null)}
+          onNext={handleNext}
+          onPrev={handlePrev}
+        />
+      )}
     </section>
   );
 };

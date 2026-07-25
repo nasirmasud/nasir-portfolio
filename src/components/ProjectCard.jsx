@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { Code2, ExternalLink, Github } from "lucide-react";
 
 const ProjectCard = ({
   title,
@@ -9,6 +9,7 @@ const ProjectCard = ({
   demoLink,
   repoLink,
   index = 0,
+  onOpen,
 }) => {
   return (
     <motion.div
@@ -55,6 +56,16 @@ const ProjectCard = ({
             <Github className='w-5 h-5' />
           </motion.a>
         </div>
+
+        {onOpen && (
+          <button
+            onClick={() => onOpen(index)}
+            className='absolute bottom-3 right-3 z-10 bg-black/60 hover:bg-violet-600 transition-colors text-white p-1.5 rounded-md border border-white/10'
+            aria-label={`View ${title} details`}
+          >
+            <Code2 size={14} />
+          </button>
+        )}
       </div>
 
       {/* Content Area */}
