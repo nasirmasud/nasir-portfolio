@@ -16,6 +16,7 @@ const Contact = () => {
 
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [status, setStatus] = useState("idle");
+  const [errorType, setErrorType] = useState(null);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -23,7 +24,21 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) {
+      setStatus("error");
+      setErrorType("validation");
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+      setStatus("error");
+      setErrorType("validation");
+      return;
+    }
+
     setStatus("sending");
+    setErrorType(null);
 
     try {
       await emailjs.send(
@@ -42,6 +57,7 @@ const Contact = () => {
     } catch (err) {
       console.error("EmailJS error:", err);
       setStatus("error");
+      setErrorType("network");
     }
   };
 
@@ -172,7 +188,10 @@ const Contact = () => {
               {status === "success" && (
                 <p className='text-sm text-green-500 font-medium'>Message sent successfully! I'll get back to you soon.</p>
               )}
-              {status === "error" && (
+              {status === "error" && errorType === "validation" && (
+                <p className='text-sm text-red-500 font-medium'>Please fill in all required fields with a valid email.</p>
+              )}
+              {status === "error" && errorType === "network" && (
                 <p className='text-sm text-red-500 font-medium'>Something went wrong. Please try again later.</p>
               )}
 
