@@ -272,7 +272,7 @@ export default function AllProjects() {
 
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
-      <Navbar />
+      <Navbar onLetsTalk={() => setContactOpen(true)} />
       <main className="px-4 pt-28 pb-16 sm:px-8">
         <div className="mx-auto px-4">
           {/* Header */}
