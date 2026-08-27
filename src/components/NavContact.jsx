@@ -61,7 +61,7 @@ const NavContact = () => {
 
       {/* CV Button - Container Static */}
       <div className='flex items-center gap-2 border border-gray-600/30 rounded-full px-4 py-2 bg-card/20 backdrop-blur-sm'>
-        <span className='text-sm font-medium'>CV</span>
+        <span className='text-sm font-medium text-gray-600'>Resume</span>
 
         {/* Download Icon - Hover Active */}
         <motion.button
