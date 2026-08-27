@@ -6,11 +6,12 @@ import NavContact from "./NavContact";
 const Navbar = ({ onLetsTalk }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = [
-    { name: "About", href: "#about" },
-    { name: "Stack", href: "#stack" },
-    { name: "Projects", href: "#projects" },
-  ];
+const navItems = [
+  { name: "Stack",    href: "#stack"     },
+  { name: "Skill",    href: "#skill"     },
+  { name: "Projects", href: "#projects"  },
+  { name: "About",    href: "#about"     },
+];
 
   return (
     <nav

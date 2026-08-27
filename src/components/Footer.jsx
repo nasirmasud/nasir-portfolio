@@ -7,7 +7,6 @@ const Footer = () => {
       data-cmp='Footer'
       className='py-8 border-t border-border bg-card/30'
     >
-      {/* max-w-[1440px] সরিয়ে w-full ব্যবহার করা হয়েছে এবং px-12 দেওয়া হয়েছে */}
       <motion.div
         className='w-full px-4 sm:px-12 lg:px-20 flex flex-col sm:flex-row justify-between items-center gap-6'
         initial={{ opacity: 0, y: 20 }}
