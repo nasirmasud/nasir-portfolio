@@ -38,7 +38,7 @@ const Footer = () => {
         <div className='flex-1 flex justify-end'>
           <p className='text-muted-foreground text-sm text-center sm:text-right'>
             !© {new Date().getFullYear()} nasirMasud. Nothing is reserved, you
-            can use anything you like.
+            can use anything you like....
           </p>
         </div>
       </motion.div>
