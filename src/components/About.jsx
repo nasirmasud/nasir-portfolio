@@ -210,7 +210,7 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Hobbies - 4 columns on large screens */}
+          {/* Hobbies - 6 columns on large screens */}
           <motion.div
             className='lg:col-span-6 space-y-6'
             initial={{ opacity: 0, y: 30 }}
@@ -218,29 +218,54 @@ const About = () => {
             transition={{ delay: 0.7 }}
           >
             <h3 className='text-2xl font-bold flex items-center gap-3 text-foreground'>
-              <Heart className='text-primary' /> Hobbies
+              <Heart className='text-primary' /> Hobbies & Interests
             </h3>
-            <div className='bg-card/50 border border-border rounded-2xl p-6 shadow-sm'>
-              <p className='text-muted-foreground mb-4 leading-relaxed'>
-                When I'm not coding, I'm usually diving into books or exploring new perspectives.
+            <div className='bg-card/50 border border-border rounded-2xl p-6 shadow-sm space-y-6'>
+              <p className='text-muted-foreground leading-relaxed'>
+                When I'm not coding, I'm usually diving into books, listening to podcasts, or exploring new perspectives.
               </p>
-              <div className='flex flex-wrap gap-2'>
-                {["Sci-Fi", "Fantasy", "Biography", "Geo-political", "Islamic History"].map((hobby) => (
-                  <span
-                    key={hobby}
-                    className='px-3 py-1 bg-secondary text-foreground text-xs font-semibold rounded-full border border-border/50 hover:border-primary/50 transition-colors cursor-default'
-                  >
-                    {hobby}
-                  </span>
-                ))}
+
+              {/* Book Genres Section */}
+              <div className='space-y-2'>
+                <h4 className='text-xs font-semibold text-primary uppercase tracking-wider flex items-center gap-2'>
+                  <BookOpen size={14} /> Book Genres
+                </h4>
+                <div className='flex flex-wrap gap-2'>
+                  {["Sci-Fi", "Fantasy", "Adventure", "Biography", "Geo-political", "Islamic History"].map((genre) => (
+                    <span
+                      key={genre}
+                      className='px-3 py-1 bg-secondary text-foreground text-xs font-semibold rounded-full border border-border/50 hover:border-primary/50 transition-colors cursor-default'
+                    >
+                      {genre}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <div className='mt-6 flex items-center gap-3 text-sm text-muted-foreground italic'>
+
+              {/* Podcast Categories Section */}
+              <div className='space-y-2'>
+                <h4 className='text-xs font-semibold text-primary uppercase tracking-wider flex items-center gap-2'>
+                  <Zap size={14} /> Podcast Topics
+                </h4>
+                <div className='flex flex-wrap gap-2'>
+                  {["Space & Astronomy", "Tech Trends", "Software Engineering", "Personal Growth", "Geopolitics", "History"].map((topic) => (
+                    <span
+                      key={topic}
+                      className='px-3 py-1 bg-secondary text-foreground text-xs font-semibold rounded-full border border-border/50 hover:border-primary/50 transition-colors cursor-default'
+                    >
+                      {topic}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Currently Interested / Reading */}
+              <div className='pt-4 border-t border-border/40 flex items-center gap-3 text-sm text-muted-foreground italic'>
                 <BookOpen size={16} className='text-primary' />
                 <span>Currently Interested: Al Quran</span>
               </div>
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>
