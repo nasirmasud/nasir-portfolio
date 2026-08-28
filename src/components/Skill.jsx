@@ -63,14 +63,18 @@ const Skill = () => {
       skills: [
         { name: "React", level: "90%" },
         { name: "Next.js", level: "85%" },
-        { name: "Tailwind CSS", level: "95%" },
         { name: "JavaScript / TypeScript", level: "85%" },
+        { name: "Tailwind CSS", level: "95%" },
+        { name: "HTML5", level: "95%" },
+        { name: "CSS3", level: "90%" },
       ],
     },
     {
       title: "Backend & Database",
       skills: [
         { name: "Node.js", level: "80%" },
+        { name: "Express.js", level: "80%" },
+        { name: "PostgreSQL", level: "75%" },
         { name: "MongoDB", level: "75%" },
         { name: "Prisma ORM", level: "80%" },
         { name: "REST APIs", level: "85%" },
@@ -80,6 +84,8 @@ const Skill = () => {
       title: "Tools & Others",
       skills: [
         { name: "Git & GitHub", level: "90%" },
+        { name: "Vite", level: "85%" },
+        { name: "ESLint", level: "80%" },
         { name: "Figma / Pixso", level: "70%" },
         { name: "VS Code Customization", level: "95%" },
         { name: "Postman", level: "85%" },
@@ -88,7 +94,7 @@ const Skill = () => {
   ];
 
   return (
-    <section id="stack" className="py-24 bg-background">
+    <section id="skill" className="py-24 bg-background">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.h2
