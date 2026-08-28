@@ -140,9 +140,7 @@ const TechStack = () => {
               className='group p-8 rounded-2xl border border-white/5 transition-all duration-300 flex flex-col items-center justify-center gap-6 bg-white/[0.03] backdrop-blur-sm'
             >
               <motion.div
-                className={`w-12 h-10 flex items-center justify-center transition-all duration-300 ${tech.color} group-hover:scale-110`}
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.8 }}
+                className={`w-12 h-10 flex items-center justify-center transition-all duration-300 ease-out ${tech.color} group-hover:-translate-y-2 group-hover:scale-125`}
               >
                 {tech.fallbackIcon ? (
                   <Component className='w-full h-full text-white' />
