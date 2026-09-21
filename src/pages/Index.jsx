@@ -1,6 +1,5 @@
 import About from "@/components/About";
 import Contact from "@/components/Contact";
-import Education from "@/components/Education";
 import Footer from "@/components/Footer";
 import GithubGraph from "@/components/GithubGraph";
 import Hero from "@/components/Hero";
@@ -15,11 +14,10 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
+        <Projects />
         <TechStack />
         <Skill />
-        <Projects />
         <About />
-        <Education />
         <GithubGraph />
         <Contact />
       </main>

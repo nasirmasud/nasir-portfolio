@@ -19,7 +19,7 @@ const NavContact = () => {
   return (
     <div className='flex items-center gap-3'>
       {/* Email Section - Container Static */}
-      <div className='flex items-center gap-2 border border-gray-600/30 rounded-full px-3 py-2 bg-card/20 backdrop-blur-sm'>
+      <div className='flex items-center gap-2 border border-gray-600/30 rounded-full px-3 py-2 bg-card/40 backdrop-blur-sm'>
         {/* Copy Button */}
         <motion.button
           whileHover={{ scale: 1.2, color: "#a855f7" }}
@@ -44,7 +44,7 @@ const NavContact = () => {
           </AnimatePresence>
         </motion.button>
 
-        <span className='text-sm font-medium text-gray-700 dark:text-gray-300 truncate max-w-[180px]'>
+        <span className='text-sm font-medium text-gray-400 truncate max-w-[180px]'>
           nasir.masud@ymail.com
         </span>
 
@@ -60,8 +60,8 @@ const NavContact = () => {
       </div>
 
       {/* CV Button - Container Static */}
-      <div className='flex items-center gap-2 border border-gray-600/30 rounded-full px-4 py-2 bg-card/20 backdrop-blur-sm'>
-        <span className='text-sm font-medium text-gray-600'>Resume</span>
+      <div className='flex items-center gap-2 border border-gray-600/30 rounded-full px-4 py-2 bg-card/40 backdrop-blur-sm'>
+        <span className='text-sm font-medium text-gray-400'>Resume</span>
 
         {/* Download Icon - Hover Active */}
         <motion.button

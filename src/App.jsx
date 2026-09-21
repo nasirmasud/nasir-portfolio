@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import AllProjects from "./pages/AllProjects";
+import TawkWidget from "./components/TawkWidget";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ function ScrollToTop() {
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
+      <TawkWidget />
       <BrowserRouter>
         <ScrollToTop />
         <Routes>

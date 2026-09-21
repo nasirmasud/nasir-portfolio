@@ -93,7 +93,7 @@
     @apply bg-card/60 backdrop-blur-md border border-white/5;
   }
   .text-gradient {
-    background: linear-gradient(to right, rgb(124, 58, 237), rgb(45, 212, 191));
+    background: linear-gradient(to right, rgb(124, 58, 237), rgb(45, 212, 191) 50%, rgb(124, 58, 237));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

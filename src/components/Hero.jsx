@@ -65,7 +65,7 @@ const Hero = () => {
           {/* Badge */}
           <motion.div
             variants={fadeInUp}
-            className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/50 border border-border text-xs font-medium text-primary mb-6'
+            className='inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/70 border border-border text-xs font-medium text-violet-300 mb-6'
           >
             <span className='relative flex h-2 w-2'>
               <span className='animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75'></span>
@@ -81,7 +81,7 @@ const Hero = () => {
           >
             Building digital <br />
             <motion.span
-              className='text-gradient bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent'
+              className='text-gradient bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-primary'
               animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
               transition={{ duration: 5, repeat: Infinity }}
             >
