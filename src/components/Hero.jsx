@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin } from "lucide-react";
 import HeroImage from "./HeroImage";
+import DarkGradientBg from "./DarkGradientBg";
 
 const Hero = () => {
   // এনিমেশন ভেরিয়েন্ট (কোড ক্লিন রাখার জন্য)
@@ -15,41 +16,9 @@ const Hero = () => {
       data-cmp='Hero'
       className='relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-40 md:pt-48 lg:pt-56 2xl:pt-48 pb-8 md:pb-8 lg:pb-8 2xl:pb-8'
     >
-      {/* Background decoration with Floating Animation */}
-      <div className='absolute top-0 left-0 w-full h-full overflow-hidden -z-10'>
-        <motion.div
-          initial={{ scale: 1, x: 0, y: 0 }}
-          animate={{
-            scale: [1, 1.1, 1],
-            x: [0, 20, 0],
-            y: [0, -20, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "linear",
-            delay: 1,
-          }}
-          className='absolute top-20 right-10 w-96 h-96 bg-primary/20 rounded-full blur-[128px] will-change-transform'
-        />
-        <motion.div
-          initial={{ scale: 1, x: 0, y: 0 }}
-          animate={{
-            scale: [1, 1.2, 1],
-            x: [0, -30, 0],
-            y: [0, 30, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "linear",
-            delay: 1,
-          }}
-          className='absolute bottom-10 left-10 w-80 h-80 bg-accent/10 rounded-full blur-[128px] will-change-transform'
-        />
-      </div>
+      <DarkGradientBg className='absolute inset-0 min-h-0' />
 
-      <div className='max-w-[1440px] w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center'>
+      <div className='relative z-10 max-w-[1440px] w-full mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center'>
         <motion.div
           initial='initial'
           animate='animate'
