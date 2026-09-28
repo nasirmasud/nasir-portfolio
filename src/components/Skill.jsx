@@ -63,7 +63,8 @@ const Skill = () => {
       skills: [
         { name: "React", level: "90%" },
         { name: "Next.js", level: "85%" },
-        { name: "JavaScript / TypeScript", level: "85%" },
+        { name: "JavaScript", level: "85%" },
+        { name: "TypeScript", level: "75%" },
         { name: "Tailwind CSS", level: "95%" },
         { name: "HTML5", level: "95%" },
         { name: "CSS3", level: "90%" },
@@ -84,10 +85,11 @@ const Skill = () => {
       title: "Tools & Others",
       skills: [
         { name: "Git & GitHub", level: "90%" },
+        { name: "Docker", level: "70%" },
+        { name: "CI/CD", level: "70%" },
         { name: "Vite", level: "85%" },
         { name: "ESLint", level: "80%" },
         { name: "Figma / Pixso", level: "70%" },
-        { name: "VS Code Customization", level: "95%" },
         { name: "Postman", level: "85%" },
       ],
     },
