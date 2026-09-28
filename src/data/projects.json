@@ -2,7 +2,7 @@
   {
     "title": "MindAgent | AI-Powered Multi-Agent Productivity Platform",
     "description": "A full-stack agentic AI platform where users interact with specialized AI Agents to generate content, analyze data, understand images, and chat with an intelligent assistant. Built with Next.js 15 and Express.js, it features streaming SSE responses, real-time conversation memory, multi-file analysis with interactive charts, and a polished responsive UI. The architecture uses a provider-agnostic AI abstraction layer, JWT authentication with Google OAuth, and a MongoDB-backed data persistence system.",
-    "image": "/site-ss/mindagent01.png",
+    "image": "/site-ss/mindAgent.png",
     "tags": [
       "Next.js",
       "React",
@@ -58,7 +58,7 @@
   {
     "title": "SkillBridge | Freelance Service Marketplace",
     "description": "A full-featured freelance service marketplace connecting clients and freelancers, featuring role-based dashboards, interactive service management, order workflows, and real-time state management.",
-    "image": "/site-ss/skillbridge-01.png",
+    "image": "/site-ss/SkillBridge.png",
     "tags": [
       "React 19",
       "TypeScript",
@@ -109,7 +109,7 @@
   {
     "title": "GameDB | Game Discovery & Review Platform",
     "description": "A full-stack game discovery platform that connects gamers with their next favorite titles. Integrates the RAWG Video Games Database API to provide a rich catalog of games with details, screenshots, trailers, and ratings. Users can browse, search, review, and wishlist games, while writers can submit custom game entries. Administrators have full moderation and analytics capabilities.",
-    "image": "/site-ss/gamedb01.png",
+    "image": "/site-ss/gameDb.png",
     "tags": [
       "Next.js 16",
       "React 19",
