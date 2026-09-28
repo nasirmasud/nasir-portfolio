@@ -22,22 +22,22 @@ const GRADIENTS = [
 ];
 
 const TECH_LOGOS = {
-  "Next.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-  React: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-  TypeScript: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-  Tailwind: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-  Express: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-  MongoDB: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-  JavaScript: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-  HTML: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-  CSS: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-  Vite: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg",
-  "Chakra UI": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chakraui/chakraui-original.svg",
-  "Prisma ORM": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg",
-  PostgreSQL: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-  "Framer Motion": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/framermotion/framermotion-original.svg",
-  Swiper: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swiper/swiper-original.svg",
-  "Chart.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chartjs/chartjs-original.svg",
+  "Next.js": "/logo/nextjs.svg",
+  React: "/logo/react.svg",
+  TypeScript: "/logo/typescript.svg",
+  Tailwind: "/logo/tailwindcss.svg",
+  Express: "/logo/express.svg",
+  MongoDB: "/logo/mongodb.svg",
+  JavaScript: "/logo/javascript.svg",
+  HTML: "/logo/html5.svg",
+  CSS: "/logo/css3.svg",
+  Vite: "/logo/vitejs.svg",
+  "Chakra UI": "/logo/chakraui.svg",
+  "Prisma ORM": "/logo/prisma.svg",
+  PostgreSQL: "/logo/postgresql.svg",
+  "Framer Motion": "/logo/framermotion.svg",
+  Swiper: "/logo/swiper.svg",
+  "Chart.js": "/logo/chartjs.svg",
   "NextAuth.js": null,
   Cloudinary: null,
   "Radix UI": null,
@@ -88,6 +88,40 @@ export function SmartImage({ src, alt, index, className }) {
       alt={alt}
       onError={() => setErrored(true)}
       className={`object-cover ${className}`}
+    />
+  );
+}
+
+// Logos that are black (or near-black) need inverting to read on a dark chip.
+const TECH_INVERT = new Set([
+  "Next.js",
+  "Express",
+  "Framer Motion",
+  "Swiper",
+  "Prisma ORM",
+]);
+
+function TechLogo({ tag, logo, fallback }) {
+  const [errored, setErrored] = useState(false);
+
+  if (!logo || errored) {
+    return (
+      <span
+        className={`w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold shrink-0 ${fallback.bg} ${fallback.text}`}
+      >
+        {fallback.label}
+      </span>
+    );
+  }
+
+  return (
+    <img
+      src={logo}
+      alt={tag}
+      loading="lazy"
+      decoding="async"
+      className={`w-5 h-5 shrink-0 object-contain${TECH_INVERT.has(tag) ? " invert" : ""}`}
+      onError={() => setErrored(true)}
     />
   );
 }
@@ -193,19 +227,7 @@ export default function ProjectDetailsModal({ project, index, total, onClose, on
                     key={tag}
                     className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-3 py-2"
                   >
-                    {logo ? (
-                      <img
-                        src={logo}
-                        alt={tag}
-                        className="w-5 h-5 shrink-0 object-contain"
-                      />
-                    ) : (
-                      <span
-                        className={`w-5 h-5 rounded-md flex items-center justify-center text-[10px] font-bold shrink-0 ${fallback.bg} ${fallback.text}`}
-                      >
-                        {fallback.label}
-                      </span>
-                    )}
+                    <TechLogo tag={tag} logo={logo} fallback={fallback} />
                     <span className="text-slate-200 text-xs truncate">{tag}</span>
                   </div>
                 );
