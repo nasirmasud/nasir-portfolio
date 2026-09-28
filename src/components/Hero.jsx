@@ -13,7 +13,7 @@ const Hero = () => {
   return (
     <div
       data-cmp='Hero'
-      className='relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-24 md:pt-24 lg:pt-40 2xl:pt-24'
+      className='relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-40 md:pt-48 lg:pt-56 2xl:pt-48 pb-8 md:pb-8 lg:pb-8 2xl:pb-8'
     >
       {/* Background decoration with Floating Animation */}
       <div className='absolute top-0 left-0 w-full h-full overflow-hidden -z-10'>
