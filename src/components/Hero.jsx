@@ -130,7 +130,7 @@ const Hero = () => {
           {/* Social Links with Stagger */}
           <motion.div
             variants={fadeInUp}
-            className='mt-12 flex items-center justify-center gap-6'
+            className='mt-12 pb-8 flex items-center justify-center gap-6'
           >
             <SocialLink
               href='https://github.com/nasirmasud/'
