@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Github, Linkedin } from "lucide-react";
-import HeroImage from "./HeroImage";
 import DarkGradientBg from "./DarkGradientBg";
+import HeroImage from "./HeroImage";
 
 const Hero = () => {
   // এনিমেশন ভেরিয়েন্ট (কোড ক্লিন রাখার জন্য)
@@ -63,7 +63,7 @@ const Hero = () => {
             variants={fadeInUp}
             className='max-w-2xl mx-auto text-lg sm:text-xl text-muted-foreground mb-10 leading-relaxed'
           >
-            I'm a self-taught React & Next.js developer passionate about
+            I'm a self-taught FrontEnd Focused Full-Stack developer passionate about
             creating intuitive, dynamic user interfaces. I turn complex problems
             into elegant code.
           </motion.p>
