@@ -10,7 +10,7 @@ const About = () => {
     <section
       id='about'
       data-cmp='About'
-      className='py-24 bg-card/30 overflow-hidden'
+      className='py-40 scroll-mt-20 bg-card/30 overflow-hidden'
       ref={ref}
     >
       <div className='max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8'>
