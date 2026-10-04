@@ -11,11 +11,6 @@ const NavContact = () => {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleDownloadCV = () => {
-    const cvUrl = "/nasir-cv.pdf";
-    window.open(cvUrl, "_blank");
-  };
-
   return (
     <div className='flex items-center gap-3'>
       {/* Email Section - Container Static */}
@@ -64,12 +59,14 @@ const NavContact = () => {
         <span className='text-sm font-medium text-gray-400'>Resume</span>
 
         {/* Download Icon - Hover Active */}
-        <motion.button
+        <motion.a
           whileHover={{ scale: 1.2, y: -3 }}
           whileTap={{ scale: 0.9 }}
-          href='mailto:nasir.masud@ymail.com'
+          href='/nasir-cv.pdf'
+          target='_blank'
+          rel='noopener noreferrer'
           className='text-purple-500 flex items-center justify-center p-1 -mt-1 rounded-full transition-colors'
-          onClick={handleDownloadCV}
+          aria-label='Open resume PDF'
         >
           <motion.div
             animate={{ y: [0, 1.5, 0] }}
@@ -77,7 +74,7 @@ const NavContact = () => {
           >
             <Download className='h-4 w-4 text-purple-500 dark:text-purple-400' />
           </motion.div>
-        </motion.button>
+        </motion.a>
       </div>
     </div>
   );
