@@ -38,12 +38,13 @@ const Projects = () => {
       data-cmp='Projects'
       className='flex min-h-[100dvh] scroll-mt-20 flex-col bg-card/30 md:h-full md:min-h-0'
     >
-      {/* pt-20 clears the fixed Navbar (Navbar.jsx h-20); centring happens in the
-          space that is actually visible below it, so no dead gap at the bottom. */}
-      <div className='flex w-full flex-1 flex-col pt-20'>
+      {/* pt-32 keeps content clear of the fixed Navbar (Navbar.jsx h-20) with room
+          to breathe; together with the region's py-8 this gives 160px top and
+          160px bottom, separating this section from the next. */}
+      <div className='flex w-full flex-1 flex-col pt-32 pb-32'>
         <div className='flex flex-1 px-4 py-8 sm:px-6 lg:px-8'>
           <div className='m-auto w-full max-w-[1440px]'>
-        {/* Header Animation */}
+            {/* Header Animation */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
