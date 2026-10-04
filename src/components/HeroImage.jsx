@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function HeroImage() {
   return (
-    <div className='flex items-center justify-center pb-12 mx-auto relative'>
+    <div className='flex items-center justify-center pb-8 md:pb-12 [@media(max-height:800px)]:pb-6 mx-auto relative'>
       {/* Profile Picture */}
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
@@ -13,7 +13,7 @@ export default function HeroImage() {
           damping: 20,
           delay: 0.1,
         }}
-        className='h-24 md:h-32 lg:h-44 2xl:h-64 w-24 md:w-32 lg:w-44 2xl:w-64 overflow-hidden rounded-full border-4 border-gray-200 shadow-xl'
+        className='h-24 md:h-32 lg:h-44 2xl:h-64 w-24 md:w-32 lg:w-44 2xl:w-64 [@media(max-height:800px)]:h-20 [@media(max-height:800px)]:w-20 md:[@media(max-height:800px)]:h-24 md:[@media(max-height:800px)]:w-24 lg:[@media(max-height:800px)]:h-32 lg:[@media(max-height:800px)]:w-32 overflow-hidden rounded-full border-4 border-gray-200 shadow-xl'
       >
         <img
           src='/proPic.png'

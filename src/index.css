@@ -82,6 +82,15 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }
+  html,
+  body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 @layer utilities {
@@ -97,6 +106,15 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+  /* Hide scrollbar while keeping scroll (pinned panel fallback) */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   /* Animation Optimization */
   .will-change-transform {
     will-change: transform;

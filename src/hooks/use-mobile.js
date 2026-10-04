@@ -2,6 +2,8 @@ import * as React from "react";
 
 const MOBILE_BREAKPOINT = 768;
 
+// Returns undefined until the media query has been evaluated, so consumers can
+// avoid rendering a desktop layout for one frame on mobile.
 export function useIsMobile() {
   const [isMobile, setIsMobile] = React.useState(undefined);
 
@@ -15,5 +17,5 @@ export function useIsMobile() {
     return () => mql.removeEventListener("change", onChange);
   }, []);
 
-  return !!isMobile;
+  return isMobile;
 }
