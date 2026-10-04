@@ -197,38 +197,47 @@ const itemVariants = {
 
 const TechStack = () => {
   return (
-    <section id='stack' className='py-24 bg-[#0a0a0a]'>
-      <div className='max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='text-center mb-16'>
-          <h2 className='text-white text-4xl font-bold'>Tech Stack</h2>
-          <p className='text-gray-400 mt-4'>Technologies I work with</p>
-        </div>
+    <section
+      id='stack'
+      className='flex min-h-[100dvh] scroll-mt-20 flex-col bg-[#0a0a0a] md:h-full md:min-h-0'
+    >
+      {/* pt-20 clears the fixed Navbar (Navbar.jsx h-20); centring happens in the
+          space that is actually visible below it, so no dead gap at the bottom. */}
+      <div className='flex w-full flex-1 flex-col pt-20'>
+        <div className='flex flex-1 px-4 py-8 sm:px-6 lg:px-8'>
+          <div className='m-auto w-full max-w-[1440px]'>
+            <div className='mb-16 text-center'>
+              <h2 className='text-4xl font-bold text-white'>Tech Stack</h2>
+              <p className='mt-4 text-gray-400'>Technologies I work with</p>
+            </div>
 
-        <motion.div
-          className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6'
-          variants={containerVariants}
-          initial='hidden'
-          whileInView='visible'
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          {technologies.map((tech) => (
             <motion.div
-              key={tech.name}
-              variants={itemVariants}
-              whileHover={{ y: -10 }}
-              className='group p-8 rounded-2xl border border-white/5 transition-all duration-300 flex flex-col items-center justify-center gap-6 bg-white/[0.03] backdrop-blur-sm'
+              className='grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6'
+              variants={containerVariants}
+              initial='hidden'
+              whileInView='visible'
+              viewport={{ once: true, amount: 0.2 }}
             >
-              <motion.div
-                className={`w-12 h-10 flex items-center justify-center transition-all duration-300 ease-out ${tech.color} group-hover:-translate-y-2 group-hover:scale-125`}
-              >
-                <TechIcon tech={tech} />
-              </motion.div>
-              <span className='font-bold text-sm md:text-base text-gray-300 group-hover:text-white'>
-                {tech.name}
-              </span>
+              {technologies.map((tech) => (
+                <motion.div
+                  key={tech.name}
+                  variants={itemVariants}
+                  whileHover={{ y: -10 }}
+                  className='group flex flex-col items-center justify-center gap-6 rounded-2xl border border-white/5 bg-white/[0.03] p-8 backdrop-blur-sm transition-all duration-300'
+                >
+                  <motion.div
+                    className={`flex h-10 w-12 items-center justify-center transition-all duration-300 ease-out ${tech.color} group-hover:-translate-y-2 group-hover:scale-125`}
+                  >
+                    <TechIcon tech={tech} />
+                  </motion.div>
+                  <span className='text-sm font-bold text-gray-300 group-hover:text-white md:text-base'>
+                    {tech.name}
+                  </span>
+                </motion.div>
+              ))}
             </motion.div>
-          ))}
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
