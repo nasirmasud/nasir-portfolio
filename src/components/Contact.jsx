@@ -62,7 +62,7 @@ const Contact = () => {
   };
 
   return (
-    <section id='contact' data-cmp='Contact' className='py-24' ref={ref}>
+    <section id='contact' data-cmp='Contact' className='py-40 scroll-mt-20' ref={ref}>
       <div className='max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-16'>
           {/* Left Side: Contact Info */}
