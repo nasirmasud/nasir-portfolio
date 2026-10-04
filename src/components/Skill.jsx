@@ -97,9 +97,10 @@ const Skill = () => {
 
   return (
     <section id="skill" className="flex min-h-[100dvh] scroll-mt-20 flex-col bg-background md:h-full md:min-h-0">
-      {/* pt-20 clears the fixed Navbar (Navbar.jsx h-20); centring happens in the
-          space that is actually visible below it, so no dead gap at the bottom. */}
-      <div className="flex w-full flex-1 flex-col pt-20">
+      {/* pt-32 keeps content clear of the fixed Navbar (Navbar.jsx h-20) with room
+          to breathe; together with the region's py-8 this gives 160px top and
+          160px bottom, matching Featured Projects and Tech Stack. */}
+      <div className="flex w-full flex-1 flex-col pt-32 pb-32">
         <div className="flex flex-1 px-4 py-8 sm:px-6 lg:px-8">
           <div className="m-auto w-full max-w-[1440px]">
             <div className="text-center mb-16">
