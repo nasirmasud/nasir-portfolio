@@ -18,10 +18,13 @@ const Hero = () => {
     >
       <DarkGradientBg className='absolute inset-0 min-h-0' />
 
-      {/* pt-20 clears the fixed Navbar (Navbar.jsx h-20); centring happens in the
-          space that is actually visible below it, so no dead gap at the bottom. */}
-      <div className='relative z-10 flex w-full flex-1 flex-col pt-20'>
-        <div className='flex flex-1 px-4 sm:px-6 lg:px-8'>
+      {/* Top padding is generous on the landing section: pt-40 on top of the region's
+          py-8 gives 192px, keeping the hero clear of the fixed Navbar
+          (Navbar.jsx h-20) with plenty of room to breathe. The max-height
+          fallback scales down proportionally to pt-28 so the hero still fits
+          one viewport on short screens. pb-20 keeps the bottom balanced. */}
+      <div className='relative z-10 flex w-full flex-1 flex-col pt-40 pb-20 [@media(max-height:800px)]:pt-28'>
+        <div className='flex flex-1 px-4 py-8 sm:px-6 lg:px-8'>
           <div className='m-auto flex w-full max-w-[1440px] flex-col items-center text-center'>
             <motion.div
               initial='initial'
