@@ -37,7 +37,7 @@ const Education = () => {
   };
 
   return (
-    <section id="education" className="py-24 bg-secondary/10" ref={ref}>
+    <section id="education" className="py-40 scroll-mt-20 bg-secondary/10" ref={ref}>
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-16">

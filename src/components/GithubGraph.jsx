@@ -7,7 +7,7 @@ const GithubGraph = () => {
   const isInView = useInView(ref, { once: false, amount: 0.2 });
 
   return (
-    <section id="github" className="py-24" ref={ref}>
+    <section id="github" className="py-40 scroll-mt-20" ref={ref}>
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16">
           <motion.span
