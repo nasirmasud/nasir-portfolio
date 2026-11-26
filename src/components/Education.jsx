@@ -8,10 +8,10 @@ const Education = () => {
 
   const educationData = [
     {
-      degree: "Electrical & Electronics Engineering",
+      degree: "Electrical Engineering",
       institution: "The Institute of Engineers, Bangladesh (IEB)",
       duration: "2007 - 2013",
-      details: "Completed 3 Years / Relevant Coursework",
+      details: "Completed AMIE Section A & B examinations in Electrical Engineering",
     },
     {
       degree: "Diploma in Engineering (Computer Technology)",
